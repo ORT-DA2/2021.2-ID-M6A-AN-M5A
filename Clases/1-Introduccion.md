@@ -36,7 +36,7 @@ Si conocen más extensiones pueden utilizarlas.
 En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para quienes utilicen MAC deben utilizar [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Guias/InstalacionSQLserverMacOS.md) de instalación y de uso).
 
 ## Postman
-Utilizaremos [Postman](https://www.postman.com/) (version 7.18 o superior) para probar la API que se hara. Postman es una plataforma para probar el desarrollo de API. Las diferentes secciones de Postman permiten simplificar cada paso de comunicacion con una API para que la creacion de la misma sea mas rapida.
+Utilizaremos [Postman](https://www.postman.com/) (version 7.18 o superior) mientras no se tenga desarrollada la GUI.
 
 ## Framework
 Para lo que es la codificación del **backend** vamos a usar la última versión de [.Net Core](https://dotnet.microsoft.com) (version 5.0).
@@ -49,7 +49,7 @@ Para que nos funcione Angular es necesario tener [Node](https://nodejs.org/es/do
 ## Gestión del código
 Es imprescindible tener GIT instalado en el equipo ya que es el repositorio que vamos a utilizar.
 
--Se consigue acá: [GIT](https://git-scm.com) y se puede usar línea de comandos o aplicación con GUI. **En la que mejor trabajemos**.
+-[GIT](https://git-scm.com) Se puede usar desde línea de comandos o aplicación con GUI, por ejemplo [Sourcetree](https://www.sourcetreeapp.com/).
 
 
 # Conceptos que se necesitan desde el día 0
@@ -58,8 +58,8 @@ A nivel teórico y tecnológico todo lo que se dio en Diseño de Aplicaciones 1 
 	
 
 - Buenas prácticas de codificación y diseño, a modo de ejemplo Clean Code, principios SOLID y GRASP, codificación con TDD y Refactoring.
-- UML 
+- UML
 - Como se codifica en C#
--  Se necesita tener claro el concepto de ORM y lo visto para Entity Framework. En particular vamos a usar [EF Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx), si no se acuerdan o no conocen, pueden ir probando. Igual a lo largo del semestre vamos a ir introduciendolo
+- Se necesita tener claro el concepto de ORM y lo visto para Entity Framework. En particular vamos a usar [EF Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx).
 - Conocimientos adquiridos en asignaturas de Ingeniería de Software tales como elaborar documentación, tener una organización mínima en el proyecto, etc.
 - Buen manejo de Git. El manejo de git y de gitflow es importante durante el curso. Como se utilizara Github, sera necesario aprender como funciona la herramienta. Para repasarlo   [Pro GIT](https://bibliotecas.ort.edu.uy/bibid/80216) (Libro muy completo sobre la funcionalidad de Git. Se encuentra en biblioteca).
