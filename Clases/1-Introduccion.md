@@ -1,16 +1,16 @@
 # Introducción
 
-Durante el transcurso del curso se construira una aplicación completa vista desde la perspectiva de sus componentes, es decir, se va desarrollar un back-end con funcionalidad y base de datos, y también, se va generar una SPA (Single Page Application) para que el usuario pueda utilizar las funcionalidades provistas por el servidor.
+Durante el curso se enseñará como crear una aplicación web cliente-servidor, es decir, un back-end con funcionalidad y base de datos, y una SPA (Single Page Application) que será la encargada de ser la UI y se comunicará con el servidor.
 
-Para este curso se divide la construcción en dos partes:
+El mismo se divide en dos partes:
 
- **La primera** es la construcción de la API (Application Programming Interface) REST la cual se creará utilizando [.Net Core](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install).
+ **La primera** es la construcción de una API (Application Programming Interface) REST la cual se creará utilizando [.Net Core](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install).
 
 ![netcore.png](https://github.com/fedeojeda95/N6A-AN-DA2-2019.1-Clases/blob/master/imgs/introduccion/netcore.png?raw=true)
 
-Cabe hacer énfasis que en esta parte no vamos a tener una GUI de usuario, sino que haremos el servicio y lo probaremos utilizando una aplicación para ello llamada [Postman](https://www.postman.com).
+La WebApi a través de Entity Framework se comunicará con una base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1).
 
-![netcore.png](postman-platform-for-api-development-social-card.jpg)
+Durante esta etapa no habrá una GUI de usuario por lo que utilizaremos [Postman](https://www.postman.com) para simular invocaciones a la API.
 
 **La segunda** es la construcción de una [SPA](https://blog.angular-university.io/why-a-single-page-application-what-are-the-benefits-what-is-a-spa/) (aplicación web) con la que el usuario podrá utilizar el sistema. La misma se realizará en [Angular](https://angular.io).
 
@@ -20,7 +20,7 @@ Cabe hacer énfasis que en esta parte no vamos a tener una GUI de usuario, sino 
 ## Visual Studio Code
 ![angular](https://github.com/fedeojeda95/N6A-AN-DA2-2019.1-Clases/raw/master/imgs/introduccion/vscode.png)
 
-Editor [Visual Studio Code](https://code.visualstudio.com). Es un editor de texto que soporta todo lo que requerimos para el desarrollo del trabajo tanto en C# (Back-end) como para TypeScript (Front-end). Es posible agregarle algunas extensiones y completar su funcionalidad. 
+[Visual Studio Code](https://code.visualstudio.com) es un editor de texto que soporta todo lo que requerimos para el desarrollo del trabajo tanto en C# (Back-end) como para TypeScript (Front-end). Es posible agregarle algunas extensiones y completar su funcionalidad. 
 
 Links interesantes:
 
@@ -31,7 +31,7 @@ Links interesantes:
  - [C# Estensions](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions) Extension para crear archivos mas facil
 
  
-Junto a estas extensiones Visual Studio Code se asemeja a un IDE completo, ya que tiene autocompletar, capacidades para debuggear, etc. Si conocen de mas extensiones que les puede facilitar y/o ayudar con el obligatorio pueden utilizarlas.
+Junto a estas extensiones Visual Studio Code se asemeja a un IDE completo, ya que tiene autocompletar, capacidades para debuggear, etc. Si conocen mas extensiones que les puede facilitar y/o ayudar con el obligatorio pueden utilizarlas.
 
 ## Base de datos
 En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para los que usen MAC segurmaente van a tener que instalar y trabajar con [Docker](https://www.docker.com/get-started)(Les dejamos una [guia]() de instalacion y de uso).
