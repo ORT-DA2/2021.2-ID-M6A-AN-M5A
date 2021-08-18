@@ -60,4 +60,4 @@ A nivel teórico y tecnológico todo lo que se dictó en Diseño de Aplicaciones
 - UML
 - Como se codifica en C#
 - Se necesita tener claro el concepto de ORM y lo visto para Entity Framework. En particular vamos a usar [EF Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx).
-- Buen manejo de Git. El manejo de git y de gitflow es importante durante el curso. Se utilizara Github, es necesario aprender como funciona la herramienta. Para repasarlo   [Pro GIT](https://bibliotecas.ort.edu.uy/bibid/80216) (Libro muy completo sobre la funcionalidad de Git. Se encuentra en biblioteca).
+- Buen manejo de Git. El manejo de git y de gitflow es importante durante el curso. Se utilizará Github, es necesario aprender como funciona la herramienta. Para repasarlo   [Pro GIT](https://bibliotecas.ort.edu.uy/bibid/80216) (Libro muy completo sobre la funcionalidad de Git. Se encuentra en biblioteca).
