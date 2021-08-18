@@ -18,11 +18,9 @@
 
 Los lenguajes C#, Visual Basic y F# pueden usarse para escribir aplicaciones y bibliotecas para .NET Core. En este curso utilizaremos **C#** exclusivamente.
 
-![c#](../imgs/introduccion/c-sharp.png)
-
 ## Composicion
 
-Es importante aclarar la composicion de toda la plataforma que utilizaremos. .NET Core es el framework del lenguaje. Esto significa que se encarga pura y exclusivamente de proveer maneras de utilizar cosas como:
+Es importante aclarar la composición de toda la plataforma que utilizaremos. .NET Core es el framework del lenguaje. Esto significa que se encarga pura y exclusivamente de proveer maneras de utilizar cosas como:
 
 * Tipos primitivos como bool e int.
 * Colecciones, como System.Collections.Generic.List<T> y System.Collections.Generic.Dictionary<TKey,TValue>.
@@ -38,6 +36,6 @@ Dado esto, todo nuestro ambiente de trabajo se compone de las siguientes partes:
 * **La herramienta dotnet:** Se usa para iniciar aplicaciones .NET Core y herramientas de CLI.
 
 
-## Mas info
+## Más info
 
-Si se desean indagar mas en .NET Core, sus ventajas y sus funcionalidades, se puede leer la excelente documentación oficial provista [aqui](https://docs.microsoft.com/es-es/dotnet/core/about)
+Si se desean indagar más en .NET Core, sus ventajas y sus funcionalidades, se puede leer la excelente documentación oficial provista [aqui](https://docs.microsoft.com/es-es/dotnet/core/about)
