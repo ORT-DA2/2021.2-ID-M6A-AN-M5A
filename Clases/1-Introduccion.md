@@ -54,12 +54,10 @@ Es imprescindible tener GIT instalado en el equipo ya que es el repositorio que 
 
 # Conceptos que se necesitan desde el día 0
 
-A nivel teórico y tecnológico todo lo que se dio en Diseño de Aplicaciones 1 se entiende como ya "dado" en este curso y por ello, los aspectos centrales deben estar claros: 
+A nivel teórico y tecnológico todo lo que se dictó en Diseño de Aplicaciones 1 se entiende como ya "dado" en este curso y por ello, los aspectos centrales deben estar claros: 
 	
-
-- Buenas prácticas de codificación y diseño, a modo de ejemplo Clean Code, principios SOLID y GRASP, codificación con TDD y Refactoring.
+- Buenas prácticas de codificación y diseño, por ejemplo Clean Code, principios SOLID y GRASP, codificación con TDD y Refactoring.
 - UML
 - Como se codifica en C#
 - Se necesita tener claro el concepto de ORM y lo visto para Entity Framework. En particular vamos a usar [EF Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx).
-- Conocimientos adquiridos en asignaturas de Ingeniería de Software tales como elaborar documentación, tener una organización mínima en el proyecto, etc.
-- Buen manejo de Git. El manejo de git y de gitflow es importante durante el curso. Como se utilizara Github, sera necesario aprender como funciona la herramienta. Para repasarlo   [Pro GIT](https://bibliotecas.ort.edu.uy/bibid/80216) (Libro muy completo sobre la funcionalidad de Git. Se encuentra en biblioteca).
+- Buen manejo de Git. El manejo de git y de gitflow es importante durante el curso. Se utilizara Github, es necesario aprender como funciona la herramienta. Para repasarlo   [Pro GIT](https://bibliotecas.ort.edu.uy/bibid/80216) (Libro muy completo sobre la funcionalidad de Git. Se encuentra en biblioteca).
