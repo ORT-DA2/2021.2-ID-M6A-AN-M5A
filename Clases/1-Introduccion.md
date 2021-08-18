@@ -30,11 +30,10 @@ Links de Interés:
  - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) Extensión que sirve para mostrar y codificar de a pares.
  - [C# Estensions](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions) Extensión para crear archivos más fácil.
 
- 
-Junto a estas extensiones Visual Studio Code se asemeja a un IDE completo, ya que tiene autocompletar, capacidades para debuggear, etc. Si conocen mas extensiones que les puede facilitar y/o ayudar con el obligatorio pueden utilizarlas.
+Si conocen más extensiones pueden utilizarlas.
 
 ## Base de datos
-En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para los que usen MAC segurmaente van a tener que instalar y trabajar con [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Clases/Guias/InstalacionSQLserverMacOS.md) de instalacion y de uso).
+En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para quienes utilicen MAC deben utilizar [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Clases/Guias/InstalacionSQLserverMacOS.md) de instalacion y de uso).
 
 ## Postman
 Utilizaremos [Postman](https://www.postman.com/) (version 7.18 o superior) para probar la API que se hara. Postman es una plataforma para probar el desarrollo de API. Las diferentes secciones de Postman permiten simplificar cada paso de comunicacion con una API para que la creacion de la misma sea mas rapida.
