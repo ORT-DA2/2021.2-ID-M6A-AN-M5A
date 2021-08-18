@@ -6,6 +6,13 @@ Este repositorio tiene como objetivo servir de apoyo a las clases de tecnología
 
 En el van a encontrar tanto material teórico y enlaces a documentos, como códigos de ejemplo que serán de utilidad para la realización del obligatorio.
 
+
+## Docentes
+
+- Nicolás Fierro [fierrodilorenzo@gmail.com](mailto:fierrodilorenzo@gmail.com)  (AN-M5A)
+- Daniel Acevedo [da185082@fi365.ort.edu.uy](mailto:da185082@fi365.ort.edu.uy) (ID-M6A)
+- Nicolás Blanco [1nico.blanco@gmail.com](mailto:1nico.blanco@gmail.com)  (ID-M6A AN-M5A)
+
 ### Herramientas necesarias para este curso
 
 - [.NET Core](https://dotnet.microsoft.com/download)
@@ -16,11 +23,3 @@ En el van a encontrar tanto material teórico y enlaces a documentos, como códi
 - [Node](https://nodejs.org/es/)
 - [Git](https://git-scm.com/)
 - [Instalar Docker y SQL Server en macOS](Clases/Guias/InstalacionSQLserverMacOS.md)
-
-
-
-## Docentes
-
-- Nicolás Fierro [fierrodilorenzo@gmail.com](mailto:fierrodilorenzo@gmail.com)  (AN-M5A)
-- Daniel Acevedo [da185082@fi365.ort.edu.uy](mailto:da185082@fi365.ort.edu.uy) (ID-M6A)
-- Nicolás Blanco [1nico.blanco@gmail.com](mailto:1nico.blanco@gmail.com)  (ID-M6A AN-M5A)
