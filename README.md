@@ -24,6 +24,12 @@ En el van a encontrar tanto material teórico y enlaces a documentos, como códi
 - [Git](https://git-scm.com/)
 - [Instalar Docker y SQL Server en macOS](Clases/Guias/InstalacionSQLserverMacOS.md)
 
+### Cuentas GitLab
+
+Es necesario para realizar el obligatorio que ingresen su usuario de github en el excel que corresponda.
+
+- [Usuarios GitHub AN M5A](https://docs.google.com/spreadsheets/d/1WSKin8x0xcooTlO_n2zNUqhQ7Vt6X9EgJniZx1hfEAU/edit?usp=sharing)
+- [Usuarios GitHub ID M6A](https://docs.google.com/spreadsheets/d/1vVDZhUQTdeDkf2ECw6uIkAjcFmjzvpkeMu4DhVALjZA/edit?usp=sharing)
 
 ### Clases
 - [Clase 1.1 - Introducción](/Clases/1.1-Introduccion.md)
