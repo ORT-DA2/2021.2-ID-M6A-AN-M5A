@@ -22,19 +22,19 @@ Durante esta etapa no habrá una GUI de usuario por lo que utilizaremos [Postman
 
 [Visual Studio Code](https://code.visualstudio.com) es un editor de texto que soporta todo lo que requerimos para el desarrollo del trabajo tanto en C# (Back-end) como para TypeScript (Front-end). Es posible agregarle algunas extensiones y completar su funcionalidad. 
 
-Links interesantes:
+Links de Interés:
 
  - [C# for Visual Studio](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) Extensión que facilita el desarrollo en C# con Visual Studio Code.
  - [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin) Extensión que facilita el desarrollo con TypeScript en Visual Studio Code.
- - [NuGet Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery) Extension para tener la galeria de librerias en VSC
- - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) Extension que sirve para mostrar y codificar de a pares
- - [C# Estensions](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions) Extension para crear archivos mas facil
+ - [NuGet Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery) Extensión para tener la galeria de librerias en VSC.
+ - [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) Extensión que sirve para mostrar y codificar de a pares.
+ - [C# Estensions](https://marketplace.visualstudio.com/items?itemName=jchannon.csharpextensions) Extensión para crear archivos más fácil.
 
  
 Junto a estas extensiones Visual Studio Code se asemeja a un IDE completo, ya que tiene autocompletar, capacidades para debuggear, etc. Si conocen mas extensiones que les puede facilitar y/o ayudar con el obligatorio pueden utilizarlas.
 
 ## Base de datos
-En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para los que usen MAC segurmaente van a tener que instalar y trabajar con [Docker](https://www.docker.com/get-started)(Les dejamos una [guia]() de instalacion y de uso).
+En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para los que usen MAC segurmaente van a tener que instalar y trabajar con [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Clases/Guias/InstalacionSQLserverMacOS.md) de instalacion y de uso).
 
 ## Postman
 Utilizaremos [Postman](https://www.postman.com/) (version 7.18 o superior) para probar la API que se hara. Postman es una plataforma para probar el desarrollo de API. Las diferentes secciones de Postman permiten simplificar cada paso de comunicacion con una API para que la creacion de la misma sea mas rapida.
