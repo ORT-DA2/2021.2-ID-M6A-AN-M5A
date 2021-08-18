@@ -27,4 +27,4 @@ En el van a encontrar tanto material teórico y enlaces a documentos, como códi
 
 ### Clases
 [Clase 1.1 - Introducción](/Clases/1.1-Introduccion.md)
-[Clase 1.2 - .Net Core](/Clases/1.1-.NET_Core.md)
+[Clase 1.2 - .Net Core](/Clases/1.2-.NET_Core.md)
