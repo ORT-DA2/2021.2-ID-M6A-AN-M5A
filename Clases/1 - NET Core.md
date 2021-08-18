@@ -1,9 +1,5 @@
 # .NET Core
 
-Como pueden recordar, en materias previas se utilizo **.NET Framework**. Este permitia crear aplicaciones para Windows, Web, entre otros. Sin embargo, solo se podia correr en Windows, y al ser *closed-source*, era necesario el pago de licencias, depender de Microsoft para muchas cosas. Tambien contaba con varios otros problemas que lo hacen una herramienta que a veces puede resultar poco atractiva o no la mejor en muchas situaciones.
-
-Recientemente, Microsoft decidio cambiar el rumbo y "rehacer" .NET de una manera mas *developer-friendly*, adaptandose a las nuevas tecnologias y ambientes. Para esto, creo **.NET Core**. Cabe aclarar que no es que .NET framework dejo de existir, si no que existen en paralelo.
-
 **.NET Core** es una plataforma de desarrollo de uso general de código abierto de cuyo mantenimiento se encargan Microsoft y la comunidad .NET en GitHub. Es multiplataforma, admite Windows, macOS y Linux y puede usarse para compilar aplicaciones de dispositivo, nube e IoT.
 
 ## Caracteristicas 
@@ -44,4 +40,4 @@ Dado esto, todo nuestro ambiente de trabajo se compone de las siguientes partes:
 
 ## Mas info
 
-Si se desea indagar mas en .NET Core, sus ventajas y sus funcionalidades, se puede leer la excelente documentacion oficial provista [aqui](https://docs.microsoft.com/es-es/dotnet/core/about)
+Si se desean indagar mas en .NET Core, sus ventajas y sus funcionalidades, se puede leer la excelente documentación oficial provista [aqui](https://docs.microsoft.com/es-es/dotnet/core/about)
