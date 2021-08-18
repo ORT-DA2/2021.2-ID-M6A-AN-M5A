@@ -33,7 +33,7 @@ Links de Interés:
 Si conocen más extensiones pueden utilizarlas.
 
 ## Base de datos
-En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para quienes utilicen MAC deben utilizar [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Clases/Guias/InstalacionSQLserverMacOS.md) de instalacion y de uso).
+En el curso vamos usar el motor de base de datos [SQL Server](https://www.microsoft.com/es-mx/sql-server/sql-server-downloads?rtc=1). Para quienes utilicen MAC deben utilizar [Docker](https://www.docker.com/get-started)(Les dejamos una [guia](Guias/InstalacionSQLserverMacOS.md) de instalación y de uso).
 
 ## Postman
 Utilizaremos [Postman](https://www.postman.com/) (version 7.18 o superior) para probar la API que se hara. Postman es una plataforma para probar el desarrollo de API. Las diferentes secciones de Postman permiten simplificar cada paso de comunicacion con una API para que la creacion de la misma sea mas rapida.
@@ -57,7 +57,7 @@ Es imprescindible tener GIT instalado en el equipo ya que es el repositorio que 
 A nivel teórico y tecnológico todo lo que se dio en Diseño de Aplicaciones 1 se entiende como ya "dado" en este curso y por ello, los aspectos centrales deben estar claros: 
 	
 
-- Buenas prácticas de codificación y diseño, a modo de ejemplo Clean Code, principios SOLID y los GRASP, codificación con TDD y Refactoring.
+- Buenas prácticas de codificación y diseño, a modo de ejemplo Clean Code, principios SOLID y GRASP, codificación con TDD y Refactoring.
 - UML 
 - Como se codifica en C#
 -  Se necesita tener claro el concepto de ORM y lo visto para Entity Framework. En particular vamos a usar [EF Core](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx), si no se acuerdan o no conocen, pueden ir probando. Igual a lo largo del semestre vamos a ir introduciendolo
