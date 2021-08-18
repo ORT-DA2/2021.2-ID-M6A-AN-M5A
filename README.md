@@ -26,4 +26,4 @@ En el van a encontrar tanto material teórico y enlaces a documentos, como códi
 
 
 ### Clases
-[Clase 1 - Introducción a .Net](/Clases/Guias/Introduccion.md)
+[Clase 1 - Introducción a .Net](/Clases/1- Introduccion.md)
