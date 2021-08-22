@@ -34,7 +34,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 ### Clases
 - [Clase 1.1 - Introducción](/Clases/1.1-Introduccion.md)
 - [Clase 1.2 - .Net Core](/Clases/1.2-.NET_Core.md)
-- [Clase 2 - WebApi]()
+- [Clase 2 - WebApi](/Clases/2-WebApi.md)
 
 
 ### Guías
