@@ -1,21 +1,21 @@
 
 # Web API
 
-En esta parte, explicaremos que es Web API. Primero, daremos un paso atras y explicaremos los conceptos asociados a una API REST, para luego explicar como es que implementa todo esto ASP NET Core Web API.
+En esta sección, explicaremos los conceptos asociados a API,API REST y Web API, para luego ver como es que se implementa en ASP NET Core Web API.
 
 ### Que es una API?
 
-Primero, debemos saber que es una API. En el software, una API (aplication programming interface) es un conjunto definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidos por un software para ser utilizado por *otro* software, ofreciendo asi una capa de abstracción.
+Una API (aplication programming interface) es un conjunto de definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidos por un software para ser utilizado por *otro* software, ofreciendo asi una capa de abstracción.
 
-En terminos mas simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o informacion de una aplicaciones, sistemas operativo, libreria, u otros servicios.
+En terminos mas simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o informacion de una aplicación, sistema operativo, libreria, u otro servicio.
 
 ### Que es una Web API?
 
-Una Web API, es como su nombre indica, una API especifica. Es una API la cual es utilizada mediante la web, mas especificamente utilizando el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La informacion que se envia y recibe en estas APIs son en algun formato especifico, como XML o JSON (el cual usaremos en este curso y es el standard actual)
+Una Web API, es como su nombre indica, una API en la web. Más especificamente utilizando el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La informacion que se envia y recibe en estas APIs son en algún formato específico, como XML o JSON (el cual usaremos en este curso y es el standard actual).
 
-Es un concepto y no una tecnologia. Se puede crear una API Web usando distintas tecnologias como Java, Javascript, .NET, etc. Un ejemplo de una API Web es la de `Twitter`, la cual permite obtener informacion de los datos e integrarse con la plataforma misma.
+Es un concepto y no una tecnologia. Se puede crear una API Web usando distintas tecnologias como Java, Javascript, .NET, etc. Un ejemplo de una API Web es la de [`Twitter`](https://developer.twitter.com/en/docs/twitter-api), la cual permite obtener informacion de los datos e integrarse con la plataforma misma.
 
-Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre otros, que veremos mas adelante. 
+Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre otros, que veremos mas adelante en este documento. 
 
 ### Que es ASP .NET Core Web Api?
 
