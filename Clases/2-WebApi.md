@@ -31,11 +31,11 @@ Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre o
 
 REST es un estilo arquitectónico que define guías de cómo hacer y cómo restringir los servicios Web y las interacciones con ellos.
 
-Es importante aclarar que REST, en su condición de estilo arquitectónico, no es un estándar estricto, si no que permite flexibilidad. Debido a estar libertad y flexibilidad en su estructura, es importante definir buenas prácticas.
+Es importante aclarar que REST, en su condición de estilo arquitectónico, no es un estándar estricto, si no que permite flexibilidad. Debido a esta libertad y flexibilidad es importante definir buenas prácticas.
 
-REST sirve como guía para definir como nombrar los recursos web y como utilizarlos. Esta interacción es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendación de los verbos (`GET`, `POST`, etc) a utilizar en cada casos. 
+REST sirve como guía para definir como nombrar los recursos web y como utilizarlos. Esta interacción es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendación de los verbos (`GET`, `POST`, etc) a utilizar en cada caso. 
 
-Cabe aclarar que REST son recomendaciones de como debemos implementar, son una guía, pero pueden existir casos específicos donde hay que romper estas convenciones. Lo importante es tener claro el por qué, qué es lo que se esta buscando y mantener estos casos al mínimo posible. 
+Cabe aclarar que REST son recomendaciones de cómo debemos implementar, son una guía, pero pueden existir casos específicos donde hay que romper estas convenciones. Lo importante es tener claro el por qué, qué es lo que se está buscando y mantener estos casos al mínimo posible. 
 
 A continuación, definiremos una guía de diseño para APIs basada fuertemente en REST, mostrando algunas las recomendaciones y limitaciones de REST.
 
@@ -51,7 +51,7 @@ A su vez, mantener estado del lado del servidor nos puede brindar problemas a la
 
 Dentro de las url de una API REST, deben evitarse los verbos y preferir los sustantivos. 
 
-**Mantener la url base lo más simple a intuitiva posible**
+**Mantener la url base lo más simple e intuitiva posible**
 
 Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si mediante la URL se puede entender que hace la API sin necesitar ningún tipo de documentación extra, será más simple de ser utilizada.
 
@@ -62,14 +62,14 @@ Algo que mantiene la simplicidad es intentar tener solo 2 URLs por recurso. Tome
 
 **Mantener los verbos fuera de la URL:**
 
-Tener verbos en las URLs lleva a que, cuando una API va creciendo, se terminen teniendo demasiados endpoints innecesariamente. Aunque puedan haber pocos recursos, es dificil representar todos los estados posibles con verbos.
+Tener verbos en las URLs lleva a que, cuando una API va creciendo, se terminen teniendo demasiados endpoints innecesariamente. Aunque pueda haber pocos recursos, es difícil representar todos los estados posibles con verbos.
 
-Por ejemplo, siguiendo con el caso de los perros. Si representamos todo con verbos, podemos terminar con casos asi:
+Por ejemplo, siguiendo con el caso de los perros. Si representamos todo con verbos, podemos terminar con casos así:
 
-* `/getAllLeashedDogs`: Los perros que tenga una correa. Deberia haber sido una url que obtenga todos los perros y reciba un parametro para filtrar.
-* `/getHungerLevel`: `Hunger` deberia ser un atributo que se obtenga del perro, no es necesario una url solo para esto.
+* `/getAllLeashedDogs`: Los perros que tenga una correa. Debería haber sido una url que obtenga todos los perros y reciba un parámetro para filtrar.
+* `/getHungerLevel`: `Hunger` debería ser un atributo que se obtenga del perro, no es necesario una url solo para esto.
 
-Y asi pueden haber muchos más casos.
+Y así pueden haber muchos más casos.
 
 **Utilizar los verbos HTTP para representar las acciones:**
 
@@ -82,37 +82,37 @@ Si tomamos nuevamente el caso de los perros tenemos dos URLs: `/dogs` y `/dogs/1
 
 Estos generalmente se utilizan para expresar los que se llama `CRUD` de un recurso (**C**reate, **R**ead, **U**pdate, **D**elete).
 
-Con las dos URLs de recursos (`/dogs` y `/dogs/123456`) en conjunto con los 4 verbos HTTP, tenemos un conjunto de operaciones que es intuitivo para los usuarios de la API. A continuación se muestra como funcionan estas combinaciones:
+Con las dos URLs de recursos (`/dogs` y `/dogs/123456`) en conjunto con los 4 verbos HTTP, tenemos un conjunto de operaciones que es intuitivo para los usuarios de la API. A continuación, se muestra cómo funcionan estas combinaciones:
 
 |                  |      POST (crear)    |  GET (obtener)  |   PUT (modificar)   |   DELETE (borrar)  |
 | ---------------- |:-------------:|:-----:|:-----:|:-----:|
 | **`/dogs`**      |   Crear un nuevo perro     |  Obtener todos los perros  |   Actualizar un conjunto de perros a la misma vez   |   Borrar todos los perros   |
 | **`/dogs/123456`** |   Error    |  Devolver perro con id 123456  |  Si existe perro con id 123456, actualizarlo, si no error   |  Borrar perro con id 123456, si no existe error  |
 
-Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta tabla ni siquiera es necesaria después. Alguien puede saber como funciona la API sin ninguna documentación.
+Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta tabla ni siquiera es necesaria después. Alguien puede saber cómo funciona la API sin ninguna documentación.
 
-### Plural o singular? Que tanta abstracción?
+### ¿Plural o singular? ¿Qué tanta abstracción?
 
-Dijimos previamente que se deben utilizar sustantivos, pero no especificamos si debian ser en plural o en singular. 
+Dijimos previamente que se deben utilizar sustantivos, pero no especificamos si debían ser en plural o en singular. 
 
-A pesar de que no hay un decisiónn específica sobre esto, la intuición lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fácil de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
+A pesar de que no hay una decisiónn específica sobre esto, la intuición lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fáciles de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
 
-Lo más importante aca es mantener consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea más dificil de usar.
+Lo más importante es mantener la consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea más difícil de usar.
 
 **Los nombres concretos son mejor que los abstractos:**
 
-A pesar de que los desarrolladores siempre estan buscando un nivel de abstracción más alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
+A pesar de que los desarrolladores siempre están buscando un nivel de abstracción más alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
 
-Imaginense que tenemos una api que tiene perros, gatos, pajaros, etc. Uno podria pensar que una buena abstracción es tener una sola url `/animals`. Sin embargo, esto termina siendo contraproducente:
+Imagínense que tenemos una api que tiene perros, gatos, pájaros, etc. Uno podría pensar que una buena abstracción es tener una sola url `/animals`. Sin embargo, esto termina siendo contraproducente:
 
-* No se ve que hace la API con ver sus urls. Nos perdemos de la oportunidad de que un usuario de la API vea las urls y sepa que nuestro sistema maneja especificamente perros, gatos y pajaros.
-* Resulta más difícil de utilizar la API, ya que no se sabe especificamente que puede contenter la respuesta.
+* No se ve que hace la API con ver sus urls. Nos perdemos de la oportunidad de que un usuario de la API vea las urls y sepa que nuestro sistema maneja específicamente perros, gatos y pájaros.
+* Resulta más difícil de utilizar la API, ya que no se sabe específicamente que puede contener la respuesta.
 
 ### Simplificar las asociaciones. Utilizar el ? para ocultar la complejidad
 
 **Asociaciones**
 
-En todos los sistemas siempre hay asociaciones entre recursos. A tiene una lista de B, B tiene una instancia de C. Como podemos expresar estas asociaciones en las urls? 
+En todos los sistemas siempre hay asociaciones entre recursos. A tiene una lista de B, B tiene una instancia de C. ¿Cómo podemos expresar estas asociaciones en las urls? 
 
 Seguiremos con nuestro ejemplo de los perros. Imaginemonos que tenemos dueños de estos perros. Queremos hacer una request a la API que me devuelva todos los perros de un dueño. Lo podemos representar de la siguiente manera
 
