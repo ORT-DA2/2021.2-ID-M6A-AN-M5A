@@ -1,13 +1,13 @@
 
 # Web API
 
-En esta sección, explicaremos los conceptos asociados a API, API REST y Web API, para luego ver como se implementa en ASP .NET Core Web API.
+En esta sección, explicaremos los conceptos asociados a API, API REST y Web API, para luego ver cómo se implementa en ASP .NET Core Web API.
 
 ### ¿Qué es una API?
 
 Una API (application programming interface) es un conjunto de definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidas por un software para ser utilizado por *otro* software, ofreciendo así una capa de abstracción.
 
-En términos más simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o información de una aplicación, sistema operativo, librería, u otro servicio.
+En términos más simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto específico de funcionalidades o información de una aplicación, sistema operativo, librería, u otro servicio.
 
 ### ¿Qué es una Web API?
 
@@ -58,7 +58,7 @@ Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si 
 Algo que mantiene la simplicidad es intentar tener solo 2 URLs por recurso. Tomemos el ejemplo de una api que maneja perros. Para los perros, deberíamos tener solo 2 urls:
 
 * `/dogs` que representa todos los perros del sistema
-* `/dogs/123456` que representa a un perro especifico en el sistema
+* `/dogs/123456` que representa a un perro específico en el sistema
 
 **Mantener los verbos fuera de la URL:**
 
@@ -68,8 +68,6 @@ Por ejemplo, siguiendo con el caso de los perros. Si representamos todo con verb
 
 * `/getAllLeashedDogs`: Los perros que tenga una correa. Debería haber sido una url que obtenga todos los perros y reciba un parámetro para filtrar.
 * `/getHungerLevel`: `Hunger` debería ser un atributo que se obtenga del perro, no es necesario una url solo para esto.
-
-Y así pueden haber muchos más casos.
 
 **Utilizar los verbos HTTP para representar las acciones:**
 
@@ -120,7 +118,7 @@ Seguiremos con nuestro ejemplo de los perros. Imaginémos que tenemos dueños de
 
 Esto se puede leer de la siguiente manera: Del owner con id 1234, devolver todos los perros. Esto resulta intuitivo de leer y un usuario de la API lo puede entender simplemente de leer la URL.
 
-Análogamente, para crear un perro para un owner especifico, podes utilizar la siguiente URL.
+Análogamente, para crear un perro para un owner específico, podes utilizar la siguiente URL.
 
 `POST /owners/1234/dogs`.
 
@@ -140,25 +138,25 @@ Por ejemplo, la request puede ser así:
 
 Hasta ahora, estuvimos viendo cómo manejar recursos específicos. `Dog` es un recurso que representa una entidad en el sistema, que debe ser accedido, modificado, creado, etc.
 
-Que pasa si tenemos que hacer algún tipo de cálculo o función en nuestra API. Por ejemplo, hacer algún tipo de cálculo financiero complejo, o hacer una traducción de un lenguaje a otro. Ninguna de estas acciones se representa por un recurso. Estas acciones responden un resultado, no un recurso.
+Pero, ¿Qué pasa si tenemos que hacer algún tipo de cálculo o función en nuestra API? Por ejemplo, hacer algún tipo de cálculo financiero complejo, o hacer una traducción de un lenguaje a otro. Ninguna de estas acciones se representa por un recurso. Estas acciones responden un resultado, no un recurso.
 
-En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo más simple posible. Por ejemplo, si tendríamos que tener un endpoint para convertir de una moneda a otra, se podría hacer de la siguiente manera:
+En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo más simple posible. Por ejemplo, si necesitamos tener un endpoint para convertir de una moneda a otra, se podría hacer de la siguiente manera:
 
 `/convert?from=EUR&to=CNY&amount=100`
 
 Esto convierte 100 euros a yuanes.
 
-Es importante que estos endpoints sean documentados correctamente, especificando sus parámetros y su comportamiento. Dado que no es estándar, un usuario de la API no sabrá como se comporta fácilmente.
+Es importante que estos endpoints sean documentados correctamente, especificando sus parámetros y su comportamiento. Dado que no es estándar, un usuario de la API no sabrá cómo se comporta fácilmente.
 
 ### Manejo de errores
 
-El manejo de errores es un aspecto critico de una buena API. Es muy importante poder explicarle al usuario de la API porque una request fallo, y brindarle toda la información necesaria para que pueda solucionarlo.
+El manejo de errores es un aspecto crítico de una buena API. Es muy importante poder explicarle al usuario de la API porque una request falló, y brindarle toda la información necesaria para que pueda solucionarlo.
 
 **Usar HTTP Codes**
 
 Es importante usar los HTTP codes en las situaciones adecuadas para seguir un standard. Existen sobre 70 [codigos](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), aunque solo un subconjunto es utilizado comúnmente.
 
-*Cuantos usar?*
+*¿Cuántos usar?*
 
 Si se analiza los posibles flujos que pueden haber cuando se ejecuta un endpoint, hay solo 3:
 
@@ -193,11 +191,11 @@ que:
 }
 ```
 
-En el segundo ejemplo, se brinda información descriptiva, se sabe donde ir a buscar más información sobre el error, y se brinda un mensaje que se le puede mostrar a un usuario.
+En el segundo ejemplo, se brinda información descriptiva, se sabe dónde ir a buscar más información sobre el error, y se brinda un mensaje que se le puede mostrar a un usuario.
 
 ## Como implementa esto `ASP .Net Core Web API`
 
-A continuación vamos a ver como implementa todos estos conceptos ASP .NET Core Web API.
+A continuación, vamos a ver como implementa todos estos conceptos ASP .NET Core Web API.
 
 Cuando creamos un proyecto Web API de ASP .NET Core, se nos crea el proyecto con un Controlador de ejemplo. Este no tiene ninguna funcionalidad "real" si no que es para mostrar cómo funciona y poder hacer una rápida prueba. Lo utilizaremos para explicar los conceptos principales.
 
@@ -251,13 +249,13 @@ namespace Homeworks.WebApi.Controllers
 
 **--`public class ValuesController : ControllerBase` // 1**
 
-Lo primero que debemos explicar es que es un controlador. Un `Controller` es una clase que se encarga de definir cada una de las rutas con la cual se puede acceder a un recurso especifico. Se pueden tener varios en la aplicación, y tienen que heredar de `ControllerBase`. Una buena práctica que hay que seguir es tener un `Controller` para cada uno de los recursos. Es decir, si nuestro sistema maneja `Usuarios` y `Animales`, se debe tener un Controller que se encargue del manejo de `Animales`, y otro Controller que se encargue del manejo de `Usuarios`.
+Lo primero que debemos explicar es que es un controlador. Un `Controller` es una clase que se encarga de definir cada una de las rutas con la cual se puede acceder a un recurso específico. Se pueden tener varios en la aplicación, y tienen que heredar de `ControllerBase`. Una buena práctica que hay que seguir es tener un `Controller` para cada uno de los recursos. Es decir, si nuestro sistema maneja `Usuarios` y `Animales`, se debe tener un Controller que se encargue del manejo de `Animales`, y otro Controller que se encargue del manejo de `Usuarios`.
 
 **-- `[Route("api/[controller]")]` // 2**
 
 La primera anotación que veremos será `Route`. Esta se utiliza para indicar a que url debe responder este controlador. Es una anotación que se pone encima de la clase. Es decir, si se pone `[Route("api/testing")]` encima de un controlador, todos los métodos de adentro del controlador serán llamados con la url `{url}/api/testing/{resto la url}`, siendo resto de la url lo indicado (o no) por cada método.
 
-En este caso, estamos utilizando `[Route("api/[controller]")]`. Esto indica que se utilice el nombre del controlador dentro de la url. Por ejemplo, en este caso, el controlador se llama `ValuesController`. La ruta que utilizara para este controlador será `{url}/api/values`. Básicamente, si el Controller se llama `XController`, se remueve el controller y se utiliza `{url}/api/X`.
+En este caso, estamos utilizando `[Route("api/[controller]")]`. Esto indica que se utilice el nombre del controlador dentro de la url. Por ejemplo, en este caso, el controlador se llama `ValuesController`. La ruta que utilizará para este controlador será `{url}/api/values`. Básicamente, si el Controller se llama `XController`, se remueve el controller y se utiliza `{url}/api/X`.
 
 **-- `[ApiController]` // 3**
 
@@ -265,7 +263,7 @@ La siguiente notación es simple. También se pone a nivel de clase y le indica 
 
 **-- `[HttpGet]` // 4**
 
-La siguiente notación que vemos es `[HttpGet]`. Esta se pone a nivel de método, e indica que este método será llamado cuando se utilice el verbo `GET` de HTTP en la url del controlador. En este caso, cuando se haga la request `GET {url}/api/values` se llamara al método `Get()`. 
+La siguiente notación que vemos es `[HttpGet]`. Esta se pone a nivel de método, e indica que este método será llamado cuando se utilice el verbo `GET` de HTTP en la url del controlador. En este caso, cuando se haga la request `GET {url}/api/values` se llamará al método `Get()`. 
 
 Cada uno de estos métodos que definimos, al cual se accede mediante una ruta con un verbo HTTP, es lo que llamamos **endpoint**. Un endpoint es un punto de entrada a la API, ya sea para recibir o enviar datos.
 
@@ -279,36 +277,36 @@ Acá veremos el retorno de una función de un controlador. En una API, cuando se
 
 Existen 4 retornos posibles para un método de un endpoint:
 
-**Tipo especifico:** 
-Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `string`. El resultado es transformado en un JSON y se envia con un codigo de ejecucion exitosa (200).
+**Tipo específico:** 
+Se retorna un tipo en particular, por ejemplo, `IEnumerable<string>` o un `string`. El resultado es transformado en un JSON y se envía con un código de ejecución exitosa (200).
 
 **IActionResult:**
-`ASP .NET Core` brinda varias ayudas para esto. Por ejemplo, existen varios metodos que retornan una respuesta adecuada, a la cual se le puede pasar la información que queremos devolver. Alguns de los más usados de estos son:
+`ASP .NET Core` brinda varias ayudas para esto. Por ejemplo, existen varios métodos que retornan una respuesta adecuada, a la cual se le puede pasar la información que queremos devolver. Algunos de los más usados de estos son:
 
-* `Ok(data)` que retorna una respuesta exitosa con un codigo 200. La data enviada como parámetro es transformada a JSON y devuelta (puede ser omitido y retornar vacio)
-* `NotFoundResult()` que reotrna un codigo 404 por no haber encontrado un recurso
-* `BadRequestResult()` que retorna un codigo 400, que hay un error en la request (puede ser por datos invalidos o cualquier otra razon). Si se pasa un string u objeto como parámetro, sera enviado como respuesta.
+* `Ok(data)` que retorna una respuesta exitosa con un código 200. La data enviada como parámetro es transformada a JSON y devuelta (puede ser omitido y retornar vacío)
+* `NotFoundResult()` que retorna un código 404 por no haber encontrado un recurso
+* `BadRequestResult()` que retorna un código 400, que hay un error en la request (puede ser por datos inválidos o cualquier otra razón). Si se pasa un string u objeto como parámetro, será enviado como respuesta.
 
 **ActionResult<T>:**
 
-Funciona de manera muy similar, brindando mayor fácilidad a la hora de generar las respuestas, ya que se puede retornar tanto un IActionResult como el tipo especifico T. 
+Funciona de manera muy similar, brindando mayor facilidad a la hora de generar las respuestas, ya que se puede retornar tanto un IActionResult como el tipo específico T. 
 
 
 Se puede ver más del retorno de una API [aqui](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2)
 
 **-- `[HttpGet("{id}")]` // 6**
 
-Aca se puede ver como se puede definir la ruta del endpoint mediante la anotacion `[HttpGet]`. El string que se le pasa como parámetro se debe agregar a la ruta para llamar a este endpoint especifico. 
+Acá se puede ver cómo se puede definir la ruta del endpoint mediante la anotación `[HttpGet]`. El string que se le pasa como parámetro se debe agregar a la ruta para llamar a este endpoint específico. 
 
-Es decir, si tenemos un metodo con `[HttpGet("another")]` en un Controller que tiene `[Route("api/testing")]`, para llamar al endpoint se debe usar la url `GET {url}/api/testing/another`. 
+Es decir, si tenemos un método con `[HttpGet("another")]` en un Controller que tiene `[Route("api/testing")]`, para llamar al endpoint se debe usar la url `GET {url}/api/testing/another`. 
 
-En este caso, vemos que en la url se encuentra `{id}`. Cuando esta entre llaves `{x}` indica que este valor debe ser pasado como parámetro a la funcion. La funcion debe recibir como parámetro este valor, con el tipo adecuado y el mismo nombre que se definio en la url. 
+En este caso, vemos que en la url se encuentra `{id}`. Cuando esta entre llaves `{x}` indica que este valor debe ser pasado como parámetro a la función. La función debe recibir como parámetro este valor, con el tipo adecuado y el mismo nombre que se definió en la url. 
 
-Por ejemplo, si se utiliza la url `GET {url}/api/values/5`, se llamara a este metodo y se enviara como parámetro a la funcion el valor 5.
+Por ejemplo, si se utiliza la url `GET {url}/api/values/5`, se llamará a este método y se enviará como parámetro a la función el valor 5.
 
 **-- `public void Post([FromBody] string value)` // 7**
 
-Por ultimo, aca se puede ver como obtener la información que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parámetro, y se intentara parsear el JSON del body, crear un elemento del tipo del parámetro, y llamar a la funcion con el. 
+Por último, acá se puede ver cómo obtener la información que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parámetro, y se intentara parsear el JSON del body, crear un elemento del tipo del parámetro, y llamar a la función con él. 
 
 
 # Más información
