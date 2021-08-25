@@ -138,17 +138,17 @@ Por ejemplo, la request puede ser así:
 
 ### ¿Cómo se manejan las operaciones que no están relacionadas a recursos específicos?
 
-Hasta ahora, estuvimos viendo como manejar recursos especificos. `Dog` es un recurso que representa una entidad en el sistema, que debe ser accedido, modificado, creado, etc.
+Hasta ahora, estuvimos viendo cómo manejar recursos específicos. `Dog` es un recurso que representa una entidad en el sistema, que debe ser accedido, modificado, creado, etc.
 
-Que pasa si tenemos que hacer algun tipo de calculo o funcion en nuestra API. Por ejemplo, hacer algun tipo de calculo financiero complejo, o hacer una traduccion de un lenguaje a otro. Ninguna de estas acciones se representa por un recurso. Estas acciones responden un resultado, no un recurso.
+Que pasa si tenemos que hacer algún tipo de cálculo o función en nuestra API. Por ejemplo, hacer algún tipo de cálculo financiero complejo, o hacer una traducción de un lenguaje a otro. Ninguna de estas acciones se representa por un recurso. Estas acciones responden un resultado, no un recurso.
 
-En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo más simple posible. Por ejemplo, si tendriamos que tener un endpoint para convertir de una moneda a otra, se podria hacer de la siguiente manera:
+En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo más simple posible. Por ejemplo, si tendríamos que tener un endpoint para convertir de una moneda a otra, se podría hacer de la siguiente manera:
 
 `/convert?from=EUR&to=CNY&amount=100`
 
 Esto convierte 100 euros a yuanes.
 
-Es importante que estos endpoints sean documentados correctamente, especificando sus parámetros y su comportamiento. Dado que no es estandard, un usuario de la API no sabra como se comporta fácilmente.
+Es importante que estos endpoints sean documentados correctamente, especificando sus parámetros y su comportamiento. Dado que no es estándar, un usuario de la API no sabrá como se comporta fácilmente.
 
 ### Manejo de errores
 
@@ -156,29 +156,29 @@ El manejo de errores es un aspecto critico de una buena API. Es muy importante p
 
 **Usar HTTP Codes**
 
-Es importante usar los HTTP codes en las situaciones adecuadas para seguir un standard. Existen sobre 70 [codigos](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), aunque solo un subconjunto es utilizado comunmente.
+Es importante usar los HTTP codes en las situaciones adecuadas para seguir un standard. Existen sobre 70 [codigos](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes), aunque solo un subconjunto es utilizado comúnmente.
 
 *Cuantos usar?*
 
 Si se analiza los posibles flujos que pueden haber cuando se ejecuta un endpoint, hay solo 3:
 
-* Todo anduvo correctamente - Exito
+* Todo anduvo correctamente - Éxito
 * El usuario hizo algo mal - Error del cliente
 * La API hizo algo mal - Error de la API
 
-Cada uno de estos se puede representar con los 3 siguientes codigos:
+Cada uno de estos se puede representar con los 3 siguientes códigos:
 
 * **200** - OK
 * **400** - Bad Request
 * **500** - Server Error
 
-A partir de esto, se pueden agregar los que se consideren necesarios. **201 - Created** es un codigo muy utilizado cuando se crea un elemento de un recurso. **401 - Unauthorized** tambien es muy utilizado, cuando el usuario no tiene permisos para realizar esa operacion.
+A partir de esto, se pueden agregar los que se consideren necesarios. **201 - Created** es un código muy utilizado cuando se crea un elemento de un recurso. **401 - Unauthorized** también es muy utilizado, cuando el usuario no tiene permisos para realizar esa operación.
 
 **Retornar mensajes lo más expresivos posibles**
 
-Mientras más expresivo y más información se le brinde al usuario, más fácil sera de usar la API.
+Mientras más expresivo y más información se le brinde al usuario, más fácil será de usar la API.
 
-Siempre sera peor tener:
+Siempre será peor tener:
 
 `{"code" : 401, "message": "Authentication Required"}`
 
@@ -197,9 +197,9 @@ En el segundo ejemplo, se brinda información descriptiva, se sabe donde ir a bu
 
 ## Como implementa esto `ASP .Net Core Web API`
 
-A continuacion vamos a ver como implementa todos estos conceptos ASP .NET Core Web API.
+A continuación vamos a ver como implementa todos estos conceptos ASP .NET Core Web API.
 
-Cuando creamos un proyecto Web API de ASP .NET core, se nos crea el proyecto con un Controlador de ejemplo. Este no tiene ninguna funcionalidad "real" si no que es para mostrar como funciona y poder hacer una rapida prueba. Lo utilizaremos para explicar los conceptos principales.
+Cuando creamos un proyecto Web API de ASP .NET Core, se nos crea el proyecto con un Controlador de ejemplo. Este no tiene ninguna funcionalidad "real" si no que es para mostrar cómo funciona y poder hacer una rápida prueba. Lo utilizaremos para explicar los conceptos principales.
 
 ```c#
 using System;
@@ -251,33 +251,33 @@ namespace Homeworks.WebApi.Controllers
 
 **--`public class ValuesController : ControllerBase` // 1**
 
-Lo primero que debemos explicar es que es un controlador. Un `Controller` es una clase que se encarga de definir cada una de las rutas con la cual se puede acceder a un recurso especifico. Se pueden tener varios en la aplicacion, y tienen que heredar de `ControllerBase`. Una buena practica que hay que seguir es tener un `Controller` para cada uno de los recursos. Es decir, si nuestro sistema maneja `Usuarios` y `Animales`, se debe tener un Controller que se encarge del manejo de `Animales`, y otro Controller que se encarge del manejo de `Usuarios`.
+Lo primero que debemos explicar es que es un controlador. Un `Controller` es una clase que se encarga de definir cada una de las rutas con la cual se puede acceder a un recurso especifico. Se pueden tener varios en la aplicación, y tienen que heredar de `ControllerBase`. Una buena práctica que hay que seguir es tener un `Controller` para cada uno de los recursos. Es decir, si nuestro sistema maneja `Usuarios` y `Animales`, se debe tener un Controller que se encargue del manejo de `Animales`, y otro Controller que se encargue del manejo de `Usuarios`.
 
 **-- `[Route("api/[controller]")]` // 2**
 
-La primera anotacion que veremos sera `Route`. Esta se utiliza para indicar a que url debe responder este controlador. Es una anotacion que se pone encima de la clase. Es decir, si se pone `[Route("api/testing")]` encima de un controlador, todos los metodos de adentro del controlador seran llamados con la url `{url}/api/testing/{resto la url}`, siendo resto de la url lo indicado (o no) por cada metodo.
+La primera anotación que veremos será `Route`. Esta se utiliza para indicar a que url debe responder este controlador. Es una anotación que se pone encima de la clase. Es decir, si se pone `[Route("api/testing")]` encima de un controlador, todos los métodos de adentro del controlador serán llamados con la url `{url}/api/testing/{resto la url}`, siendo resto de la url lo indicado (o no) por cada método.
 
-En este caso, estamos utilizando `[Route("api/[controller]")]`. Esto indica que se utilice el nombre del controlador dentro de la url. Por ejemplo, en este caso, el controlador se llama `ValuesController`. La ruta que utilizara para este controlador sera `{url}/api/values`. Basicamente, si el Controller se llama `XController`, se remueve el controller y se utiliza `{url}/api/X`.
+En este caso, estamos utilizando `[Route("api/[controller]")]`. Esto indica que se utilice el nombre del controlador dentro de la url. Por ejemplo, en este caso, el controlador se llama `ValuesController`. La ruta que utilizara para este controlador será `{url}/api/values`. Básicamente, si el Controller se llama `XController`, se remueve el controller y se utiliza `{url}/api/X`.
 
 **-- `[ApiController]` // 3**
 
-La siguiente anotacion es simple. Tambien se pone a nivel de clase y le indica a ASP .NET Core que esta clase es un controller.
+La siguiente notación es simple. También se pone a nivel de clase y le indica a ASP .NET Core que esta clase es un controller.
 
 **-- `[HttpGet]` // 4**
 
-La siguiente notacion que vemos es `[HttpGet]`. Esta se pone a nivel de metodo, e indica que este metodo sera llamado cuando se utilice el verbo `GET` de HTTP en la url del controlador. En este caso, cuando se haga la request `GET {url}/api/values` se llamara al metodo `Get()`. 
+La siguiente notación que vemos es `[HttpGet]`. Esta se pone a nivel de método, e indica que este método será llamado cuando se utilice el verbo `GET` de HTTP en la url del controlador. En este caso, cuando se haga la request `GET {url}/api/values` se llamara al método `Get()`. 
 
-Cada uno de estos metodos que definimos, al cual se accede mediante una ruta con un verbo HTTP, es lo que llamamos **endpoint**. Un endpoint es un punto de entrada a la API, ya sea para recibir o enviar datos.
+Cada uno de estos métodos que definimos, al cual se accede mediante una ruta con un verbo HTTP, es lo que llamamos **endpoint**. Un endpoint es un punto de entrada a la API, ya sea para recibir o enviar datos.
 
 **-- `public ActionResult<IEnumerable<string>> Get()` // 5**
 
-Aca veremos el retorno de una funcion de un controlador. En una API,cuando se retorna de una funcion, existen varias cosas que se retornan. 
+Acá veremos el retorno de una función de un controlador. En una API, cuando se retorna de una función, existen varias cosas que se retornan. 
 
 * Primero, los datos solicitados en si, como pueden ser los valores del `Get()` en este caso. 
-* Segundo, se retorna un codigo HTTP que da más información sobre el resultado. Este puede ser un 400 si es un error, un 200 si es exitoso, 404 no encontrado, y un sin fin más de codigos HTTP que representan una cosa
-* Tercero y ultimo, se retornan headers de una request HTTP, los cuales se utilizan para brindar otra información.
+* Segundo, se retorna un código HTTP que da más información sobre el resultado. Este puede ser un 400 si es un error, un 200 si es exitoso, 404 no encontrado, y un sin fin más de códigos HTTP que representan una cosa
+* Tercero, se retornan headers de una request HTTP, los cuales se utilizan para brindar otra información.
 
-Existen 4 retornos posibles para un metodo de un endpoint:
+Existen 4 retornos posibles para un método de un endpoint:
 
 **Tipo especifico:** 
 Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `string`. El resultado es transformado en un JSON y se envia con un codigo de ejecucion exitosa (200).
