@@ -33,7 +33,7 @@ REST es un estilo arquitectónico que define guías de cómo hacer y cómo restr
 
 Es importante aclarar que REST, en su condición de estilo arquitectónico, no es un estándar estricto, si no que permite flexibilidad. Debido a esta libertad y flexibilidad es importante definir buenas prácticas.
 
-REST sirve como guía para definir como nombrar los recursos web y como utilizarlos. Esta interacción es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendación de los verbos (`GET`, `POST`, etc) a utilizar en cada caso. 
+REST sirve como guía para definir como nombrar los recursos web y como utilizarlos. Esta interacción es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendación de los verbos (`GET`, `POST`, etc.) a utilizar en cada caso. 
 
 Cabe aclarar que REST son recomendaciones de cómo debemos implementar, son una guía, pero pueden existir casos específicos donde hay que romper estas convenciones. Lo importante es tener claro el por qué, qué es lo que se está buscando y mantener estos casos al mínimo posible. 
 
@@ -41,7 +41,7 @@ A continuación, definiremos una guía de diseño para APIs basada fuertemente e
 
 ### Todas las requests son "stateless". No se mantiene estado del lado del servidor
 
-Todo el estado (es decir, información necesaria para llevar a cabo una acción) tiene que estar del lado de la request (ya sea en la url, como parametro, como header) y no del lado del servidor. 
+Todo el estado (es decir, información necesaria para llevar a cabo una acción) tiene que estar del lado de la request (ya sea en la url, como parámetro, como header) y no del lado del servidor. 
 
 Esto nos permite independizarnos del estado del servidor. No importa si tenemos muchos, si este se cae y se levanta de vuelta, nuestra request será recibida y procesada de la misma manera. 
 
@@ -73,7 +73,7 @@ Y así pueden haber muchos más casos.
 
 **Utilizar los verbos HTTP para representar las acciones:**
 
-Si tomamos nuevamente el caso de los perros tenemos dos URLs: `/dogs` y `/dogs/123456`. Para operar sobre ellos, es decir, actualizarlos, obtenerlos, crearlos, etc, utilizamos los verbos HTTP. Estos son
+Si tomamos nuevamente el caso de los perros tenemos dos URLs: `/dogs` y `/dogs/123456`. Para operar sobre ellos, es decir, actualizarlos, obtenerlos, crearlos, etc., utilizamos los verbos HTTP. Estos son
 
 * `GET`
 * `POST`
@@ -95,7 +95,7 @@ Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta ta
 
 Dijimos previamente que se deben utilizar sustantivos, pero no especificamos si debían ser en plural o en singular. 
 
-A pesar de que no hay una decisiónn específica sobre esto, la intuición lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fáciles de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
+A pesar de que no hay una decisión específica sobre esto, la intuición lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fáciles de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
 
 Lo más importante es mantener la consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea más difícil de usar.
 
@@ -114,29 +114,29 @@ Imagínense que tenemos una api que tiene perros, gatos, pájaros, etc. Uno podr
 
 En todos los sistemas siempre hay asociaciones entre recursos. A tiene una lista de B, B tiene una instancia de C. ¿Cómo podemos expresar estas asociaciones en las urls? 
 
-Seguiremos con nuestro ejemplo de los perros. Imaginemonos que tenemos dueños de estos perros. Queremos hacer una request a la API que me devuelva todos los perros de un dueño. Lo podemos representar de la siguiente manera
+Seguiremos con nuestro ejemplo de los perros. Imaginémos que tenemos dueños de estos perros. Queremos hacer una request a la API que me devuelva todos los perros de un dueño. Lo podemos representar de la siguiente manera
 
 `GET /owners/1234/dogs`
 
 Esto se puede leer de la siguiente manera: Del owner con id 1234, devolver todos los perros. Esto resulta intuitivo de leer y un usuario de la API lo puede entender simplemente de leer la URL.
 
-Analogamente, para crear un perro para un owner especifico, podes utilizar la siguiente URL.
+Análogamente, para crear un perro para un owner especifico, podes utilizar la siguiente URL.
 
 `POST /owners/1234/dogs`.
 
 Es importante aclarar que hay que evitar llegar a demasiados niveles de relaciones "para adentro" ya que termina siendo confuso leerlo.
 
-**Esconder complejidad detras del ?**
+**Esconder complejidad detrás del ?**
 
-Generalmente, las APIs toman en cuenta varios otros atributos cuando se hace una request, como pueden ser filtros, parametros, etc. Por ejemplo, cuando se hace una consulta a `GET /dogs`, se puede querer obtener **solo** los perros que tengan color rojo, y esten corriendo. 
+Generalmente, las APIs toman en cuenta varios atributos cuando se hace una request, como pueden ser filtros, parámetros, etc. Por ejemplo, cuando se hace una consulta a `GET /dogs`, se puede querer obtener **solo** los perros que tengan color rojo, y estén corriendo. 
 
-Estos parametros (color y state pueden ser llamados) deben ser enviados como parametros despues del `?`, conocidos como query params.
+Estos parámetros (color y state pueden ser llamados) deben ser enviados como parámetros después del `?`, conocidos como query params.
 
-Por ejemplo, la request puede ser asi:
+Por ejemplo, la request puede ser así:
 
 `GET /dogs?color=red&state=running&location=park`
 
-### Como se manejan operaciones que no estan relacionadas a recursos especificos?
+### ¿Cómo se manejan las operaciones que no están relacionadas a recursos específicos?
 
 Hasta ahora, estuvimos viendo como manejar recursos especificos. `Dog` es un recurso que representa una entidad en el sistema, que debe ser accedido, modificado, creado, etc.
 
@@ -148,7 +148,7 @@ En este caso, es necesario usar verbos y no sustantivos. Es importante mantener 
 
 Esto convierte 100 euros a yuanes.
 
-Es importante que estos endpoints sean documentados correctamente, especificando sus parametros y su comportamiento. Dado que no es estandard, un usuario de la API no sabra como se comporta fácilmente.
+Es importante que estos endpoints sean documentados correctamente, especificando sus parámetros y su comportamiento. Dado que no es estandard, un usuario de la API no sabra como se comporta fácilmente.
 
 ### Manejo de errores
 
@@ -285,9 +285,9 @@ Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `
 **IActionResult:**
 `ASP .NET Core` brinda varias ayudas para esto. Por ejemplo, existen varios metodos que retornan una respuesta adecuada, a la cual se le puede pasar la información que queremos devolver. Alguns de los más usados de estos son:
 
-* `Ok(data)` que retorna una respuesta exitosa con un codigo 200. La data enviada como parametro es transformada a JSON y devuelta (puede ser omitido y retornar vacio)
+* `Ok(data)` que retorna una respuesta exitosa con un codigo 200. La data enviada como parámetro es transformada a JSON y devuelta (puede ser omitido y retornar vacio)
 * `NotFoundResult()` que reotrna un codigo 404 por no haber encontrado un recurso
-* `BadRequestResult()` que retorna un codigo 400, que hay un error en la request (puede ser por datos invalidos o cualquier otra razon). Si se pasa un string u objeto como parametro, sera enviado como respuesta.
+* `BadRequestResult()` que retorna un codigo 400, que hay un error en la request (puede ser por datos invalidos o cualquier otra razon). Si se pasa un string u objeto como parámetro, sera enviado como respuesta.
 
 **ActionResult<T>:**
 
@@ -298,17 +298,17 @@ Se puede ver más del retorno de una API [aqui](https://docs.microsoft.com/en-us
 
 **-- `[HttpGet("{id}")]` // 6**
 
-Aca se puede ver como se puede definir la ruta del endpoint mediante la anotacion `[HttpGet]`. El string que se le pasa como parametro se debe agregar a la ruta para llamar a este endpoint especifico. 
+Aca se puede ver como se puede definir la ruta del endpoint mediante la anotacion `[HttpGet]`. El string que se le pasa como parámetro se debe agregar a la ruta para llamar a este endpoint especifico. 
 
 Es decir, si tenemos un metodo con `[HttpGet("another")]` en un Controller que tiene `[Route("api/testing")]`, para llamar al endpoint se debe usar la url `GET {url}/api/testing/another`. 
 
-En este caso, vemos que en la url se encuentra `{id}`. Cuando esta entre llaves `{x}` indica que este valor debe ser pasado como parametro a la funcion. La funcion debe recibir como parametro este valor, con el tipo adecuado y el mismo nombre que se definio en la url. 
+En este caso, vemos que en la url se encuentra `{id}`. Cuando esta entre llaves `{x}` indica que este valor debe ser pasado como parámetro a la funcion. La funcion debe recibir como parámetro este valor, con el tipo adecuado y el mismo nombre que se definio en la url. 
 
-Por ejemplo, si se utiliza la url `GET {url}/api/values/5`, se llamara a este metodo y se enviara como parametro a la funcion el valor 5.
+Por ejemplo, si se utiliza la url `GET {url}/api/values/5`, se llamara a este metodo y se enviara como parámetro a la funcion el valor 5.
 
 **-- `public void Post([FromBody] string value)` // 7**
 
-Por ultimo, aca se puede ver como obtener la información que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parametro, y se intentara parsear el JSON del body, crear un elemento del tipo del parametro, y llamar a la funcion con el. 
+Por ultimo, aca se puede ver como obtener la información que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parámetro, y se intentara parsear el JSON del body, crear un elemento del tipo del parámetro, y llamar a la funcion con el. 
 
 
 # Más información
