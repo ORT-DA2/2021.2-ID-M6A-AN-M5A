@@ -5,21 +5,21 @@ En esta sección, explicaremos los conceptos asociados a API, API REST y Web API
 
 ### ¿Qué es una API?
 
-Una API (aplication programming interface) es un conjunto de definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidos por un software para ser utilizado por *otro* software, ofreciendo asi una capa de abstracción.
+Una API (application programming interface) es un conjunto de definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidas por un software para ser utilizado por *otro* software, ofreciendo así una capa de abstracción.
 
-En términos más simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o información de una aplicación, sistema operativo, libreria, u otro servicio.
+En términos más simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o información de una aplicación, sistema operativo, librería, u otro servicio.
 
 ### ¿Qué es una Web API?
 
-Una Web API, como su nombre indica, es una API en la web que utiliza el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La información que se envia y recibe en estas APIs son en algún formato específico, como XML o JSON (el cual usaremos en este curso y es el standard actual).
+Una Web API, como su nombre indica, es una API en la web que utiliza el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La información que se envía y recibe en estas APIs son en algún formato específico, como XML o JSON (el cual usaremos en este curso y es el standard actual).
 
-Es un concepto y no una tecnología. Se puede crear una API Web usando distintas tecnologías como Java, Javascript, .NET, etc. Un ejemplo de una API Web es la de [`Twitter`](https://developer.twitter.com/en/docs/twitter-api), la cual permite obtener información de los datos e integrarse con la plataforma misma.
+Es un concepto y no una tecnología. Se puede crear una API Web usando distintas tecnologías como Java, JavaScript, .NET, etc. Un ejemplo de una API Web es la de [`Twitter`](https://developer.twitter.com/en/docs/twitter-api), la cual permite obtener información de los datos e integrarse con la plataforma misma.
 
 Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre otros, que veremos más adelante en este documento. 
 
 ### ¿Qué es ASP .NET Core Web Api?
 
-`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias caracteristicas modernas que hacen la vida del desarrollador más fácil:
+`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias características modernas que hacen la vida del desarrollador más fácil:
 
 * Orientado a APIs REST
 * Parseo automático a JSON customizable
@@ -31,19 +31,19 @@ Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre o
 
 REST es un estilo arquitectónico que define guías de cómo hacer y cómo restringir los servicios Web y las interacciones con ellos.
 
-Es importante aclarar que REST, en su condicion de estilo arquitectonico, no es un estandard estricto, si no que permite flexibilidad. Debido a estar libertad y flexibilidad en su estructura, es importante definir buenas practicas.
+Es importante aclarar que REST, en su condición de estilo arquitectónico, no es un estándar estricto, si no que permite flexibilidad. Debido a estar libertad y flexibilidad en su estructura, es importante definir buenas prácticas.
 
-REST sirve como guia para definir como nombrar los recursos web y como utilizarlos. Esta interaccion es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendacion de en que casos utilizar cada uno de los verbos (`GET`, `POST`, etc). 
+REST sirve como guía para definir como nombrar los recursos web y como utilizarlos. Esta interacción es fuertemente basada en herramientas del protocolo HTTP. Por ejemplo, REST da una recomendación de los verbos (`GET`, `POST`, etc) a utilizar en cada casos. 
 
-Algo importante de aclarar es que nada esta escrito con fuego. REST recomienda cosas, pero pueden haber casos especificos donde hay que romper estas convenciones. Lo importante es tener claro porque se rompe, que es lo que se esta buscando y mantener estos casos al minimo. 
+Cabe aclarar que REST son recomendaciones de como debemos implementar, son una guía, pero pueden existir casos específicos donde hay que romper estas convenciones. Lo importante es tener claro el por qué, qué es lo que se esta buscando y mantener estos casos al mínimo posible. 
 
-A continuación, definiremos una guia de diseño para APIs basada fuertemente en REST, mostrando algunas de las recomendaciones y limitaciones que REST plantea.
+A continuación, definiremos una guía de diseño para APIs basada fuertemente en REST, mostrando algunas las recomendaciones y limitaciones de REST.
 
 ### Todas las requests son "stateless". No se mantiene estado del lado del servidor
 
-Todo el estado (es decir, información necesaria para llevar a cabo una accion) tiene que estar del lado de la request (ya sea en la url, como parametro, como header) y no del lado del servidor. 
+Todo el estado (es decir, información necesaria para llevar a cabo una acción) tiene que estar del lado de la request (ya sea en la url, como parametro, como header) y no del lado del servidor. 
 
-Esto nos permite independizarnos del estado del servidor. No importa si tenemos muchos, si este se cae y se levanta de vuelta, nuestra request sera recibida y procesada de la misma manera. 
+Esto nos permite independizarnos del estado del servidor. No importa si tenemos muchos, si este se cae y se levanta de vuelta, nuestra request será recibida y procesada de la misma manera. 
 
 A su vez, mantener estado del lado del servidor nos puede brindar problemas a la hora de tener que atender muchas solicitudes a la vez.
 
@@ -53,9 +53,9 @@ Dentro de las url de una API REST, deben evitarse los verbos y preferir los sust
 
 **Mantener la url base lo más simple a intuitiva posible**
 
-Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si mediante la URL se puede entender que hace la API sin necesitar ningun tipo de documentacion extra, sera más simple de ser utilizada.
+Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si mediante la URL se puede entender que hace la API sin necesitar ningún tipo de documentación extra, será más simple de ser utilizada.
 
-Algo que mantiene la simplicidad es intentar tener solo 2 URLs por recurso. Tomemos el ejemplo de una api que maneja perros. Para los perros, deberiamos tener solo 2 urls:
+Algo que mantiene la simplicidad es intentar tener solo 2 URLs por recurso. Tomemos el ejemplo de una api que maneja perros. Para los perros, deberíamos tener solo 2 urls:
 
 * `/dogs` que representa todos los perros del sistema
 * `/dogs/123456` que representa a un perro especifico en el sistema
@@ -89,21 +89,21 @@ Con las dos URLs de recursos (`/dogs` y `/dogs/123456`) en conjunto con los 4 ve
 | **`/dogs`**      |   Crear un nuevo perro     |  Obtener todos los perros  |   Actualizar un conjunto de perros a la misma vez   |   Borrar todos los perros   |
 | **`/dogs/123456`** |   Error    |  Devolver perro con id 123456  |  Si existe perro con id 123456, actualizarlo, si no error   |  Borrar perro con id 123456, si no existe error  |
 
-Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta tabla nisiquiera es necesaria despues. Alguien puede saber como funciona la API sin ninguna documentación.
+Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta tabla ni siquiera es necesaria después. Alguien puede saber como funciona la API sin ninguna documentación.
 
 ### Plural o singular? Que tanta abstracción?
 
 Dijimos previamente que se deben utilizar sustantivos, pero no especificamos si debian ser en plural o en singular. 
 
-A pesar de que no hay un decision especifica sobre esto, la intuicion lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fácil de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
+A pesar de que no hay un decisiónn específica sobre esto, la intuición lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fácil de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
 
 Lo más importante aca es mantener consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea más dificil de usar.
 
 **Los nombres concretos son mejor que los abstractos:**
 
-A pesar de que los desarrolladores siempre estan buscando un nivel de abstraccion más alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
+A pesar de que los desarrolladores siempre estan buscando un nivel de abstracción más alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
 
-Imaginense que tenemos una api que tiene perros, gatos, pajaros, etc. Uno podria pensar que una buena abstraccion es tener una sola url `/animals`. Sin embargo, esto termina siendo contraproducente:
+Imaginense que tenemos una api que tiene perros, gatos, pajaros, etc. Uno podria pensar que una buena abstracción es tener una sola url `/animals`. Sin embargo, esto termina siendo contraproducente:
 
 * No se ve que hace la API con ver sus urls. Nos perdemos de la oportunidad de que un usuario de la API vea las urls y sepa que nuestro sistema maneja especificamente perros, gatos y pajaros.
 * Resulta más difícil de utilizar la API, ya que no se sabe especificamente que puede contenter la respuesta.
