@@ -1,7 +1,7 @@
 
 # Web API
 
-En esta sección, explicaremos los conceptos asociados a API, API REST y Web API, para luego ver como es que se implementa en ASP NET Core Web API.
+En esta sección, explicaremos los conceptos asociados a API, API REST y Web API, para luego ver como se implementa en ASP .NET Core Web API.
 
 ### ¿Qué es una API?
 
@@ -19,17 +19,17 @@ Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre o
 
 ### ¿Qué es ASP .NET Core Web Api?
 
-`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias caracteristicas modernas que hacen la vida del desarrollador más facil:
+`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias caracteristicas modernas que hacen la vida del desarrollador más fácil:
 
-* Parseo automatica a JSON que tambien es customizable
-* Herramientas de autenticacion
-* Definición simple de rutas en el codigo
-* Tooling en varias plataformas para que el desarrollo sea comodo y facil
 * Orientado a APIs REST
+* Parseo automático a JSON customizable
+* Herramientas de autenticación
+* Definición simple de rutas en el código
+* Tooling en varias plataformas para que el desarrollo sea cómodo y fácil
 
 ## ¿Qué es REST? Diseño de APIs
 
-REST es un estilo arquitectonico que define guias de como hacer y como restringir los servicios Web y las interacciones con ellos.
+REST es un estilo arquitectónico que define guías de cómo hacer y cómo restringir los servicios Web y las interacciones con ellos.
 
 Es importante aclarar que REST, en su condicion de estilo arquitectonico, no es un estandard estricto, si no que permite flexibilidad. Debido a estar libertad y flexibilidad en su estructura, es importante definir buenas practicas.
 
@@ -148,7 +148,7 @@ En este caso, es necesario usar verbos y no sustantivos. Es importante mantener 
 
 Esto convierte 100 euros a yuanes.
 
-Es importante que estos endpoints sean documentados correctamente, especificando sus parametros y su comportamiento. Dado que no es estandard, un usuario de la API no sabra como se comporta facilmente.
+Es importante que estos endpoints sean documentados correctamente, especificando sus parametros y su comportamiento. Dado que no es estandard, un usuario de la API no sabra como se comporta fácilmente.
 
 ### Manejo de errores
 
@@ -176,7 +176,7 @@ A partir de esto, se pueden agregar los que se consideren necesarios. **201 - Cr
 
 **Retornar mensajes lo más expresivos posibles**
 
-Mientras más expresivo y más información se le brinde al usuario, más facil sera de usar la API.
+Mientras más expresivo y más información se le brinde al usuario, más fácil sera de usar la API.
 
 Siempre sera peor tener:
 
@@ -291,7 +291,7 @@ Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `
 
 **ActionResult<T>:**
 
-Funciona de manera muy similar, brindando mayor facilidad a la hora de generar las respuestas, ya que se puede retornar tanto un IActionResult como el tipo especifico T. 
+Funciona de manera muy similar, brindando mayor fácilidad a la hora de generar las respuestas, ya que se puede retornar tanto un IActionResult como el tipo especifico T. 
 
 
 Se puede ver más del retorno de una API [aqui](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2)
