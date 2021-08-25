@@ -1,25 +1,25 @@
 
 # Web API
 
-En esta sección, explicaremos los conceptos asociados a API,API REST y Web API, para luego ver como es que se implementa en ASP NET Core Web API.
+En esta sección, explicaremos los conceptos asociados a API, API REST y Web API, para luego ver como es que se implementa en ASP NET Core Web API.
 
-### Que es una API?
+### ¿Qué es una API?
 
 Una API (aplication programming interface) es un conjunto de definiciones, protocolos y herramientas para crear software y aplicaciones. Estas son ofrecidos por un software para ser utilizado por *otro* software, ofreciendo asi una capa de abstracción.
 
-En terminos mas simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o informacion de una aplicación, sistema operativo, libreria, u otro servicio.
+En términos más simples, una API es un tipo de interfaz la cual tiene un conjunto de funciones que permite a los desarrolladores acceder a un conjunto especifico de funcionalidades o información de una aplicación, sistema operativo, libreria, u otro servicio.
 
-### Que es una Web API?
+### ¿Qué es una Web API?
 
-Una Web API, es como su nombre indica, una API en la web. Más especificamente utilizando el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La informacion que se envia y recibe en estas APIs son en algún formato específico, como XML o JSON (el cual usaremos en este curso y es el standard actual).
+Una Web API, como su nombre indica, es una API en la web que utiliza el protocolo HTTP. Para acceder a esta API, se utiliza una URL (`https://x.com/a/b`). La información que se envia y recibe en estas APIs son en algún formato específico, como XML o JSON (el cual usaremos en este curso y es el standard actual).
 
-Es un concepto y no una tecnologia. Se puede crear una API Web usando distintas tecnologias como Java, Javascript, .NET, etc. Un ejemplo de una API Web es la de [`Twitter`](https://developer.twitter.com/en/docs/twitter-api), la cual permite obtener informacion de los datos e integrarse con la plataforma misma.
+Es un concepto y no una tecnología. Se puede crear una API Web usando distintas tecnologías como Java, Javascript, .NET, etc. Un ejemplo de una API Web es la de [`Twitter`](https://developer.twitter.com/en/docs/twitter-api), la cual permite obtener información de los datos e integrarse con la plataforma misma.
 
-Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre otros, que veremos mas adelante en este documento. 
+Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre otros, que veremos más adelante en este documento. 
 
-### Que es ASP .NET Core Web Api?
+### ¿Qué es ASP .NET Core Web Api?
 
-`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias caracteristicas modernas que hacen la vida del desarrollador mas facil:
+`ASP .NET Core Web Api` es el framework creado por Microsoft que corre sobre .NET Core. Es un framework extensible para crear servicios basados en HTTP REST, los cuales pueden ser accedidos mediante la web. Cuenta con varias caracteristicas modernas que hacen la vida del desarrollador más facil:
 
 * Parseo automatica a JSON que tambien es customizable
 * Herramientas de autenticacion
@@ -27,7 +27,7 @@ Existen varios conceptos asociados a las Web APIs, como endpoints, REST, entre o
 * Tooling en varias plataformas para que el desarrollo sea comodo y facil
 * Orientado a APIs REST
 
-## Que es REST? Diseño de APIs
+## ¿Qué es REST? Diseño de APIs
 
 REST es un estilo arquitectonico que define guias de como hacer y como restringir los servicios Web y las interacciones con ellos.
 
@@ -41,7 +41,7 @@ A continuación, definiremos una guia de diseño para APIs basada fuertemente en
 
 ### Todas las requests son "stateless". No se mantiene estado del lado del servidor
 
-Todo el estado (es decir, informacion necesaria para llevar a cabo una accion) tiene que estar del lado de la request (ya sea en la url, como parametro, como header) y no del lado del servidor. 
+Todo el estado (es decir, información necesaria para llevar a cabo una accion) tiene que estar del lado de la request (ya sea en la url, como parametro, como header) y no del lado del servidor. 
 
 Esto nos permite independizarnos del estado del servidor. No importa si tenemos muchos, si este se cae y se levanta de vuelta, nuestra request sera recibida y procesada de la misma manera. 
 
@@ -51,9 +51,9 @@ A su vez, mantener estado del lado del servidor nos puede brindar problemas a la
 
 Dentro de las url de una API REST, deben evitarse los verbos y preferir los sustantivos. 
 
-**Mantener la url base lo mas simple a intuitiva posible**
+**Mantener la url base lo más simple a intuitiva posible**
 
-Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si mediante la URL se puede entender que hace la API sin necesitar ningun tipo de documentacion extra, sera mas simple de ser utilizada.
+Una URL base que sea simple e intuitiva hace que utilizar la API sea simple. Si mediante la URL se puede entender que hace la API sin necesitar ningun tipo de documentacion extra, sera más simple de ser utilizada.
 
 Algo que mantiene la simplicidad es intentar tener solo 2 URLs por recurso. Tomemos el ejemplo de una api que maneja perros. Para los perros, deberiamos tener solo 2 urls:
 
@@ -69,7 +69,7 @@ Por ejemplo, siguiendo con el caso de los perros. Si representamos todo con verb
 * `/getAllLeashedDogs`: Los perros que tenga una correa. Deberia haber sido una url que obtenga todos los perros y reciba un parametro para filtrar.
 * `/getHungerLevel`: `Hunger` deberia ser un atributo que se obtenga del perro, no es necesario una url solo para esto.
 
-Y asi pueden haber muchos mas casos.
+Y asi pueden haber muchos más casos.
 
 **Utilizar los verbos HTTP para representar las acciones:**
 
@@ -95,18 +95,18 @@ Debido a que esto es intuitivo y conocido por todos los desarrolladores, esta ta
 
 Dijimos previamente que se deben utilizar sustantivos, pero no especificamos si debian ser en plural o en singular. 
 
-A pesar de que no hay un decision especifica sobre esto, la intuicion lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan mas facil de leer, y como generalmente los endpoints mas utilizados son los GET, estos quedan mas claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
+A pesar de que no hay un decision especifica sobre esto, la intuicion lleva a pensar que es mejor tener los recursos en plural. Los recursos quedan más fácil de leer, y como generalmente los endpoints más utilizados son los GET, estos quedan más claro con plural. `GET /dogs` obtiene los perros, `GET /dogs/1234` obtiene de los perros, el de id `1234`.
 
-Lo mas importante aca es mantener consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea mas dificil de usar.
+Lo más importante aca es mantener consistencia. Nunca mezclar singular con plural. La inconsistencia hace que la API no sea predecible y sea más dificil de usar.
 
 **Los nombres concretos son mejor que los abstractos:**
 
-A pesar de que los desarrolladores siempre estan buscando un nivel de abstraccion mas alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
+A pesar de que los desarrolladores siempre estan buscando un nivel de abstraccion más alto, en los casos de los recursos en una API REST, se debe preferir los nombres concretos.
 
 Imaginense que tenemos una api que tiene perros, gatos, pajaros, etc. Uno podria pensar que una buena abstraccion es tener una sola url `/animals`. Sin embargo, esto termina siendo contraproducente:
 
 * No se ve que hace la API con ver sus urls. Nos perdemos de la oportunidad de que un usuario de la API vea las urls y sepa que nuestro sistema maneja especificamente perros, gatos y pajaros.
-* Resulta mas dificil de utilizar la API, ya que no se sabe especificamente que puede contenter la respuesta.
+* Resulta más difícil de utilizar la API, ya que no se sabe especificamente que puede contenter la respuesta.
 
 ### Simplificar las asociaciones. Utilizar el ? para ocultar la complejidad
 
@@ -142,7 +142,7 @@ Hasta ahora, estuvimos viendo como manejar recursos especificos. `Dog` es un rec
 
 Que pasa si tenemos que hacer algun tipo de calculo o funcion en nuestra API. Por ejemplo, hacer algun tipo de calculo financiero complejo, o hacer una traduccion de un lenguaje a otro. Ninguna de estas acciones se representa por un recurso. Estas acciones responden un resultado, no un recurso.
 
-En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo mas simple posible. Por ejemplo, si tendriamos que tener un endpoint para convertir de una moneda a otra, se podria hacer de la siguiente manera:
+En este caso, es necesario usar verbos y no sustantivos. Es importante mantener estos verbos lo más simple posible. Por ejemplo, si tendriamos que tener un endpoint para convertir de una moneda a otra, se podria hacer de la siguiente manera:
 
 `/convert?from=EUR&to=CNY&amount=100`
 
@@ -174,9 +174,9 @@ Cada uno de estos se puede representar con los 3 siguientes codigos:
 
 A partir de esto, se pueden agregar los que se consideren necesarios. **201 - Created** es un codigo muy utilizado cuando se crea un elemento de un recurso. **401 - Unauthorized** tambien es muy utilizado, cuando el usuario no tiene permisos para realizar esa operacion.
 
-**Retornar mensajes lo mas expresivos posibles**
+**Retornar mensajes lo más expresivos posibles**
 
-Mientras mas expresivo y mas información se le brinde al usuario, mas facil sera de usar la API.
+Mientras más expresivo y más información se le brinde al usuario, más facil sera de usar la API.
 
 Siempre sera peor tener:
 
@@ -193,7 +193,7 @@ que:
 }
 ```
 
-En el segundo ejemplo, se brinda informacion descriptiva, se sabe donde ir a buscar mas informacion sobre el error, y se brinda un mensaje que se le puede mostrar a un usuario.
+En el segundo ejemplo, se brinda información descriptiva, se sabe donde ir a buscar más información sobre el error, y se brinda un mensaje que se le puede mostrar a un usuario.
 
 ## Como implementa esto `ASP .Net Core Web API`
 
@@ -274,7 +274,7 @@ Cada uno de estos metodos que definimos, al cual se accede mediante una ruta con
 Aca veremos el retorno de una funcion de un controlador. En una API,cuando se retorna de una funcion, existen varias cosas que se retornan. 
 
 * Primero, los datos solicitados en si, como pueden ser los valores del `Get()` en este caso. 
-* Segundo, se retorna un codigo HTTP que da mas informacion sobre el resultado. Este puede ser un 400 si es un error, un 200 si es exitoso, 404 no encontrado, y un sin fin mas de codigos HTTP que representan una cosa
+* Segundo, se retorna un codigo HTTP que da más información sobre el resultado. Este puede ser un 400 si es un error, un 200 si es exitoso, 404 no encontrado, y un sin fin más de codigos HTTP que representan una cosa
 * Tercero y ultimo, se retornan headers de una request HTTP, los cuales se utilizan para brindar otra información.
 
 Existen 4 retornos posibles para un metodo de un endpoint:
@@ -283,7 +283,7 @@ Existen 4 retornos posibles para un metodo de un endpoint:
 Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `string`. El resultado es transformado en un JSON y se envia con un codigo de ejecucion exitosa (200).
 
 **IActionResult:**
-`ASP .NET Core` brinda varias ayudas para esto. Por ejemplo, existen varios metodos que retornan una respuesta adecuada, a la cual se le puede pasar la informacion que queremos devolver. Alguns de los mas usados de estos son:
+`ASP .NET Core` brinda varias ayudas para esto. Por ejemplo, existen varios metodos que retornan una respuesta adecuada, a la cual se le puede pasar la información que queremos devolver. Alguns de los más usados de estos son:
 
 * `Ok(data)` que retorna una respuesta exitosa con un codigo 200. La data enviada como parametro es transformada a JSON y devuelta (puede ser omitido y retornar vacio)
 * `NotFoundResult()` que reotrna un codigo 404 por no haber encontrado un recurso
@@ -294,7 +294,7 @@ Se retorna un tipo en particular, como por ejemplo, `IEnumerable<string>` o un `
 Funciona de manera muy similar, brindando mayor facilidad a la hora de generar las respuestas, ya que se puede retornar tanto un IActionResult como el tipo especifico T. 
 
 
-Se puede ver mas del retorno de una API [aqui](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2)
+Se puede ver más del retorno de una API [aqui](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.2)
 
 **-- `[HttpGet("{id}")]` // 6**
 
@@ -308,9 +308,9 @@ Por ejemplo, si se utiliza la url `GET {url}/api/values/5`, se llamara a este me
 
 **-- `public void Post([FromBody] string value)` // 7**
 
-Por ultimo, aca se puede ver como obtener la informacion que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parametro, y se intentara parsear el JSON del body, crear un elemento del tipo del parametro, y llamar a la funcion con el. 
+Por ultimo, aca se puede ver como obtener la información que es enviada en el body de la request. Se le agrega el atributo `[FromBody]` a un parametro, y se intentara parsear el JSON del body, crear un elemento del tipo del parametro, y llamar a la funcion con el. 
 
 
-# Mas información
+# Más información
 
 * El libro API Design EBook, que se encuentra en el curso de aulas.
