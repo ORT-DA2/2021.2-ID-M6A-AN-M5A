@@ -311,4 +311,4 @@ Por último, acá se puede ver cómo obtener la información que es enviada en e
 
 # Más información
 
-* El libro API Design EBook, que se encuentra en el curso de aulas.
+* Libro API Design EBook.
