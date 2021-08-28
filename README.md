@@ -39,7 +39,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - [Usuarios GitHub ID M6A](https://docs.google.com/spreadsheets/d/1vVDZhUQTdeDkf2ECw6uIkAjcFmjzvpkeMu4DhVALjZA/edit?usp=sharing)
 
 ## Parte 1: .Net Core WebApi
-- Clase 1 - [Introducción](/Clases/Clase_01-Intro/1.1-Introduccion.md) y [.Net Core](/Clases/Clase_01-Intro/1.2-.NET_Core.md)
+- Clase 1 - [Introducción](/Clases/Clase_01-Intro/1.1-Introduccion.md) y [.Net Core](/Clases/Clase_01-Intro/1.2-.NET_Core.md) ([Otras lecturas](https://cheerful-nation-1ca.notion.site/ASP-NET-Core-a1e2fee147cf44fbb2c6a7f962bd2341))
 - Clase 2 - [WebApi](https://cheerful-nation-1ca.notion.site/WEB-API-b460683de96a4d66aed5660a9d4de8bf)
 
 
