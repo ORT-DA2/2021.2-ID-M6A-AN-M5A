@@ -40,7 +40,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 
 ## Parte 1: .Net Core WebApi
 - Clase 1 - [Introducción](/Clases/Clase_01-Intro/1.1-Introduccion.md) y [.Net Core](/Clases/Clase_01-Intro/1.2-.NET_Core.md)
-- Clase 2 - [WebApi](https://www.notion.so/WEB-API-b460683de96a4d66aed5660a9d4de8bf)
+- Clase 2 - [WebApi](https://cheerful-nation-1ca.notion.site/WEB-API-b460683de96a4d66aed5660a9d4de8bf)
 
 
 ### Guías
