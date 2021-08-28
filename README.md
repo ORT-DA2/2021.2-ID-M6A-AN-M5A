@@ -44,4 +44,4 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 
 
 ### Guías
-- [Comandos Base para crear y copilar un proyecto](/Clases/Guias/ComandosNetCore.md)
+- [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
