@@ -13,7 +13,7 @@ En el van a encontrar tanto material teórico y enlaces a documentos, como códi
 - Daniel Acevedo [da185082@fi365.ort.edu.uy](mailto:da185082@fi365.ort.edu.uy) (ID-M6A)
 - Nicolás Blanco [1nico.blanco@gmail.com](mailto:1nico.blanco@gmail.com)  (ID-M6A AN-M5A)
 
-### Herramientas necesarias para este curso
+## Herramientas necesarias para este curso
 
 - [.NET Core](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -46,9 +46,9 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - Clase 5 - [Entity FrameWork](https://cheerful-nation-1ca.notion.site/EF-CORE-c9c7991c5c9f414f8aa6f2abb2d6a83f)
 
 
-### Guías
+## Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
 
 
-### Aclaración
+## Aclaración
 - El código que se encuentra está escrito en un ámbito de clase, es incompleto y seguramente con errores. No se debe tomar como ejemplo final.
