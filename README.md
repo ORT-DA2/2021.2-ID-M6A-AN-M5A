@@ -48,3 +48,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 
 ### Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
+
+
+### Aclaración
+- El código que se encuentra está escrito en un ámbito de clase, es incompleto y seguramente con errores. No se debe tomar como ejemplo final.
