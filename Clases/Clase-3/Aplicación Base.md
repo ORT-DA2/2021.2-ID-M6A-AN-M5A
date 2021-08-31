@@ -6,8 +6,8 @@ Lo siguiente es simplemente un ejemplo, una guía de como distruibuir la aplicac
 
 ## Diagrama de Clases
 
-![IMAGE](/Imagenes/DiagramaClases.png)
+![IMAGE](/Clases/Clase-3/Imagenes/DiagramaClases.png)
 
 ## Diagrama de Paquetes (Vista de Usos)
 
-![IMAGE](/Imagenes/DiagramaPaquetes.png)
+![IMAGE](/Clases/Clase-3/Imagenes/DiagramaPaquetes.png)
