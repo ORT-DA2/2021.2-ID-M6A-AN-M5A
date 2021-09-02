@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Domain;
+using BusinessLogicInterface;
 
 namespace WebApi.Controllers
 {
@@ -10,39 +11,25 @@ namespace WebApi.Controllers
     [Route("restaurants")]
     public class RestaurantController : ControllerBase
     {
-        private static readonly List<Restaurant> restaurants = new List<Restaurant>()
+        private readonly IRestaurantLogic _restaurantLogic;
+        
+        public RestaurantController(IRestaurantLogic restaurantLogic)
         {
-            new Restaurant()
-            {
-                Id = 1,
-                Name = "HorreoBurger",
-                Address = "General Rivera 3091",
-                Products = new List<Product>
-                {
-                    new Product()
-                    {
-                        Name = "Grajera",
-                        Price = 300
-                    }
-                }
-            }
-        };
+            this._restaurantLogic = restaurantLogic;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
+            IEnumerable<Restaurant> restaurants = this._restaurantLogic.GetAll();
+
             return Ok(restaurants);
         }
 
         [HttpGet("{restaurantId}", Name = "GetRestaurant")]
         public IActionResult GetById(int restaurantId)
         {
-            var restaurant = restaurants.FirstOrDefault((restaurant) => restaurant.Id == restaurantId);
-
-            if (restaurant == null)
-            {
-                return NotFound($"Not found Restaurant {restaurantId}");
-            }
+            Restaurant restaurant = this._restaurantLogic.GetById(restaurantId);
 
             return Ok(restaurant);
         }
@@ -50,24 +37,15 @@ namespace WebApi.Controllers
         [HttpPost]
         public IActionResult Post(Restaurant restaurant)
         {
-            restaurant.Id = restaurants.Count + 1;
-            restaurants.Add(restaurant);
+            Restaurant newRestaurant = this._restaurantLogic.Add(restaurant);
 
-            return CreatedAtRoute("GetRestaurant", new { restaurantId = restaurant.Id }, restaurant);
+            return CreatedAtRoute("GetRestaurant", new { restaurantId = newRestaurant.Id }, newRestaurant);
         }
 
         [HttpPut("{restaurantId}")]
         public IActionResult Put(int restaurantId, Restaurant updatedRestaurant)
         {
-            var restaurantSaved = restaurants.FirstOrDefault(restaurant => restaurant.Id == restaurantId);
-
-            if (restaurantSaved is null)
-            {
-                return NotFound();
-            }
-
-            updatedRestaurant.Id = restaurantId;
-            restaurantSaved = updatedRestaurant;
+            this._restaurantLogic.Update(restaurantId, updatedRestaurant);
 
             return NoContent();
         }
@@ -75,14 +53,7 @@ namespace WebApi.Controllers
         [HttpDelete("{restaurantId}")]
         public IActionResult Delete(int restaurantId)
         {
-            var restaurant = restaurants.FirstOrDefault(restaurant => restaurant.Id == restaurantId);
-
-            if (restaurant is null)
-            {
-                return NotFound();
-            }
-
-            restaurants.Remove(restaurant);
+            this._restaurantLogic.Delete(restaurantId);
 
             return NoContent();
         }
