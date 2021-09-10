@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Domain;
 using BusinessLogicInterface;
 
-namespace WebApi.Controllers
+namespace WebApi
 {
     [ApiController]
     [Route("restaurants")]
@@ -22,7 +22,6 @@ namespace WebApi.Controllers
         public IActionResult Get()
         {
             IEnumerable<Restaurant> restaurants = this._restaurantLogic.GetAll();
-
             return Ok(restaurants);
         }
 

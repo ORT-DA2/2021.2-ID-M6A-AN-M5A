@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace MyFristWebApi.Controllers
+namespace WebApi
 {
     [ApiController]
     [Route("movies")]
