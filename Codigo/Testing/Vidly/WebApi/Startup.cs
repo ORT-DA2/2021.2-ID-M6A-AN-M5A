@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Factory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,8 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using WebApi.Interfaces;
-using WebApi.Services;
 
 namespace WebApi
 {
@@ -34,13 +33,8 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
 
-            services.AddScoped<IScoped, MovieService>();
-            services.AddScoped<IScoped, MovieService>();
-
-            services.AddTransient<ITransient, MovieService>();
-            services.AddTransient<ITransient, MovieService>();
-
-            services.AddSingleton<ISingleton, MovieService>();
+            var businessContainer = new BusinessLogicFactory(services);
+            businessContainer.AddBusinessLogicServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

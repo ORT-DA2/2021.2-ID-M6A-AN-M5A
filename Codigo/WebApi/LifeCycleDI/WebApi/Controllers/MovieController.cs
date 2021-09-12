@@ -15,7 +15,12 @@ namespace WebApi.Controllers
         private readonly ITransient _movieServiceTransientTwo;
         private readonly ISingleton _movieServiceSingleton;
 
-        public MovieController(IScoped movieServiceScoped, IScoped movieServiceScopedTwo, ITransient movieServiceTransient, ITransient movieServiceTransientTwo, ISingleton movieServiceSingleton)
+        public MovieController(
+            IScoped movieServiceScoped, 
+            IScoped movieServiceScopedTwo, 
+            ITransient movieServiceTransient, 
+            ITransient movieServiceTransientTwo, 
+            ISingleton movieServiceSingleton)
         {
             this._movieServiceScoped = movieServiceScoped;
             this._movieServiceScopedTwo = movieServiceScopedTwo;
