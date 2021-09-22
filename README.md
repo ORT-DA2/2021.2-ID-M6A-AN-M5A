@@ -44,7 +44,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - Clase 3 - [Inyección de dependencias](https://cheerful-nation-1ca.notion.site/Inyecci-n-de-dependencia-084456a1937f40f4b6e767711c7ca1c9)
 - Clase 4 - [Testing](https://cheerful-nation-1ca.notion.site/Unit-test-4554cc7a49bd4fe4a06c509de80ac77f)
 - Clase 5 - [Entity FrameWork](https://cheerful-nation-1ca.notion.site/EF-CORE-c9c7991c5c9f414f8aa6f2abb2d6a83f)
-
+- Clase 6 - [Filters](https://cheerful-nation-1ca.notion.site/Filtros-11ba7df748cd4240aba28ded55e55076)
 
 ## Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
