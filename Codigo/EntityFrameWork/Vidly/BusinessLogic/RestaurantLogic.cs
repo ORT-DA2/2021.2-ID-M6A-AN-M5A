@@ -26,7 +26,14 @@ namespace BusinessLogic
                 }
             }
         };
-
+//Se debe crear un new que reciba por parametro IRepository<Restaurant> y modificarlo en la startup para que invoque a ese
+//Ejemplo:
+/*      public RestaurantLogic(IRepository<Restaurant> repository)
+        {
+            this.repository = repository;
+        }
+*/
+//Luego se trabaja con repository para invocar los add,get,etc.
         public Restaurant Add(Restaurant restaurant)
         {
             restaurant.Id = restaurants.Count + 1;

@@ -19,7 +19,7 @@ namespace DataAccessTest
 
             using (var context = new MyContext(options))
             {
-                var repository = new RestaurantRepository<Restaurant>(context);
+                var repository = new RestaurantRepository(context);
                 Restaurant restaurant = new Restaurant()
                 {
                     Id = 1,
@@ -36,12 +36,12 @@ namespace DataAccessTest
         public void GetAllTest()
         {
             var options = new DbContextOptionsBuilder<MyContext>()
-            .UseInMemoryDatabase(databaseName: "TestDB")
+            .UseInMemoryDatabase(databaseName: "TestDB2")
             .Options;
 
             using (var context = new MyContext(options))
             {
-                var repository = new RestaurantRepository<Restaurant>(context);
+                var repository = new RestaurantRepository(context);
                 Restaurant restaurant = new Restaurant()
                 {
                     Id = 1,
@@ -51,7 +51,7 @@ namespace DataAccessTest
                 };
                Restaurant restaurant2 = new Restaurant()
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Prueba2",
                     Products = new List<Product>()
                 };

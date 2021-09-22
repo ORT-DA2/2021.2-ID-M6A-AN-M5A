@@ -35,6 +35,7 @@ namespace WebApi
 
             var businessContainer = new BusinessLogicFactory(services);
             businessContainer.AddBusinessLogicServices();
+            //Deben crear un factory similar para DataAccess
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
