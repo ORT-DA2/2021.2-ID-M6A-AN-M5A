@@ -1,8 +1,9 @@
 
+using Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace WebApi
+namespace MyFristWebApi.Controllers
 {
     [ApiController]
     [Route("movies")]
@@ -25,7 +26,7 @@ namespace WebApi
         }
 
         [HttpPost]
-        public IActionResult AddMovie(object movie)
+        public IActionResult AddMovie(Movie movie)
         {
             return CreatedAtRoute("GetMovie", new { movieId = 2 }, movie);
         }
