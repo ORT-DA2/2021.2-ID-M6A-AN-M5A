@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
+using System.Linq.Expressions;
 
 namespace DataAccessInterface
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        void Create(T entity);
-        void Delete(T entity);
-        void Update(T entity);
-        T Get(int id);
-        IEnumerable<T> GetAll();
-        void Save();
+        TEntity GetById(int id);
+        bool Exist(Expression<Func<TEntity, bool>> expression);
     }
 }

@@ -1,82 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using BusinessLogicInterface;
+using BusinessLogicInterface.Exceptions;
+using DataAccessInterface;
 using Domain;
 
 namespace BusinessLogic
 {
     public class RestaurantLogic : IRestaurantLogic
     {
-        private static readonly List<Restaurant> restaurants = new List<Restaurant>()
+        private readonly IRestaurantRepository _restaurantRepository;
+        private readonly IUserLogic _userLogic;
+
+        public RestaurantLogic(IRestaurantRepository restaurantRepository, IUserLogic userLogic)
         {
-            new Restaurant()
-            {
-                Id = 1,
-                Name = "HorreoBurger",
-                Address = "General Rivera 3091",
-                Products = new List<Product>
-                {
-                    new Product()
-                    {
-                        Id = 1,
-                        Name = "Grajera",
-                        Price = 300
-                    }
-                }
-            }
-        };
-//Se debe crear un new que reciba por parametro IRepository<Restaurant> y modificarlo en la startup para que invoque a ese
-//Ejemplo:
-/*      public RestaurantLogic(IRepository<Restaurant> repository)
-        {
-            this.repository = repository;
+            this._restaurantRepository = restaurantRepository;
+            this._userLogic = userLogic;
         }
-*/
-//Luego se trabaja con repository para invocar los add,get,etc.
+
         public Restaurant Add(Restaurant restaurant)
         {
-            restaurant.Id = restaurants.Count + 1;
-            restaurants.Add(restaurant);
+            if(restaurant is null)
+            {
+                throw new ArgumentNullException("Restaurant can't be null");
+            }
+
+            restaurant.Validate();
+
+            bool existRestaurant = this._restaurantRepository.Exist(restaurantSaved => restaurantSaved.Name == restaurant.Name);
+            if(existRestaurant)
+            {
+                throw new DuplicatedRestaurantException(restaurant.Name);
+            }
+
+            bool existUser = this._userLogic.Exist(restaurant.OwnerId);
+            if(!existUser)
+            {
+                throw new InvalidOperationException("Owner doesn't exist in the database");
+            }
+
+            this._restaurantRepository.Create(restaurant);
 
             return restaurant;
         }
 
         public void Delete(int restaurantId)
         {
-            var restaurant = restaurants.FirstOrDefault(restaurant => restaurant.Id == restaurantId);
+            var restaurant = this._restaurantRepository.GetById(restaurantId);
 
-            if(restaurant is null)
-            {
-                throw new Exception("Not found restaurant");
-            }
-
-            restaurants.Remove(restaurant);
+            this._restaurantRepository.Delete(restaurant);
         }
 
         public IEnumerable<Restaurant> GetAll()
         {
+            IEnumerable<Restaurant> restaurants = this._restaurantRepository.GetAll();
+
             return restaurants;
         }
 
         public Restaurant GetById(int restaurantId)
         {
-            var restaurant = restaurants.FirstOrDefault((restaurant) => restaurant.Id == restaurantId);
+            Restaurant restaurant = this._restaurantRepository.GetById(restaurantId);
 
             return restaurant;
         }
 
         public void Update(int restaurantId, Restaurant restaurant)
         {
-            var restaurantSaved = restaurants.FirstOrDefault(restaurant => restaurant.Id == restaurantId);
-
-            if(restaurantSaved is null)
+            bool existRestaurant = this._restaurantRepository.Exist(restaurantSaved => restaurantSaved.Id == restaurantId);
+            if(!existRestaurant)
             {
-                throw new Exception("Not found restaurant");
+                throw new ArgumentNullException("Restaurant not found"); 
             }
 
             restaurant.Id = restaurantId;
-            restaurantSaved = restaurant;
+            this._restaurantRepository.UpdateAll(restaurant);
         }
     }
 }

@@ -16,8 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebApi\WebApi.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\BusinessLogicInterface\BusinessLogicInterface.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>
