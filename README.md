@@ -38,13 +38,19 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - [Usuarios GitHub AN M5A](https://docs.google.com/spreadsheets/d/1WSKin8x0xcooTlO_n2zNUqhQ7Vt6X9EgJniZx1hfEAU/edit?usp=sharing)
 - [Usuarios GitHub ID M6A](https://docs.google.com/spreadsheets/d/1vVDZhUQTdeDkf2ECw6uIkAjcFmjzvpkeMu4DhVALjZA/edit?usp=sharing)
 
-## Parte 1: .Net Core WebApi
+## Parte 1: Backend.Net Core WebApi
 - Clase 1 - [Introducción](/Clases/Clase_01-Intro/1.1-Introduccion.md) y [.Net Core](/Clases/Clase_01-Intro/1.2-.NET_Core.md) ([Otras lecturas](https://cheerful-nation-1ca.notion.site/ASP-NET-Core-a1e2fee147cf44fbb2c6a7f962bd2341))
 - Clase 2 - [WebApi](https://cheerful-nation-1ca.notion.site/WEB-API-b460683de96a4d66aed5660a9d4de8bf)
 - Clase 3 - [Inyección de dependencias](https://cheerful-nation-1ca.notion.site/Inyecci-n-de-dependencia-084456a1937f40f4b6e767711c7ca1c9)
 - Clase 4 - [Testing](https://cheerful-nation-1ca.notion.site/Unit-test-4554cc7a49bd4fe4a06c509de80ac77f)
 - Clase 5 - [Entity FrameWork](https://cheerful-nation-1ca.notion.site/EF-CORE-c9c7991c5c9f414f8aa6f2abb2d6a83f)
-- Clase 6 - [Filters](https://cheerful-nation-1ca.notion.site/Filtros-11ba7df748cd4240aba28ded55e55076)
+- Clase 6 - [Filters](https://cheerful-nation-1ca.notion.site/Filtros-11ba7df748cd4240aba28ded55e55076) / [Resumen Filters](/Clases/Clase_6-Filters/Filters.md)
+
+## Parte 1 y 1/2:  
+- Clase 7 - Ejemplos de filters + dudas obligatorio
+- Clase 8 - Primera prueba tecnología + Clase de consulta
+
+## Parte 2: FrontEnd - Angular y Reflection
 
 ## Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)

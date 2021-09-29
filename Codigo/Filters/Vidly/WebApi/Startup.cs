@@ -35,6 +35,8 @@ namespace WebApi
             });
 
             services.AddScoped<AuthorizationFilter>();
+            services.AddScoped<ResultFilter>();
+            services.AddScoped<ExceptionFilter>();
 
             var businessContainer = new BusinessLogicFactory(services);
             businessContainer.AddBusinessLogicServices();

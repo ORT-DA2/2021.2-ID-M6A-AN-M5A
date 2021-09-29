@@ -10,6 +10,9 @@ namespace WebApi
 {
     [ApiController]
     //[ServiceFilter(typeof(AuthorizationFilter))]
+    [ServiceFilter(typeof(ExceptionFilter))]
+    [ServiceFilter(typeof(ResultFilter))]
+
     [Route("restaurants")]
     public class RestaurantController : ControllerBase
     {
