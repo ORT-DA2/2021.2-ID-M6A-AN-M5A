@@ -34,7 +34,7 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
 
-            services.AddScoped<AuthorizationFilter>();
+           services.AddScoped<AuthorizationFilter>();
             services.AddScoped<ResultFilter>();
             services.AddScoped<ExceptionFilter>();
 
