@@ -1,19 +1,25 @@
 ﻿using BusinessLogicInterface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 
 namespace WebApi.Filters
 {
-    public class AuthorizationFilter : Attribute, IAuthorizationFilter
+    public class AuthorizationWithParameterFilter : Attribute, IAuthorizationFilter
     {
-        private readonly IUserLogic logic;
-        public AuthorizationFilter(IUserLogic logic)
+        private IUserLogic logic;
+        private string arg;
+
+        public AuthorizationWithParameterFilter(string arguments)
         {
-            this.logic = logic;
+            arg = arguments;
+
         }
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+
+            logic = context.HttpContext.RequestServices.GetService<IUserLogic>();
             string token = context.HttpContext.Request.Headers["token"];
             if (token == null)
             {
@@ -22,8 +28,7 @@ namespace WebApi.Filters
                     StatusCode = 401,
                     Content = "You aren't logued."
                 };
-            }
-            else if (!logic.IsLogued(token))
+            }else if (!logic.IsLogued(token)) //Aca se debería hacer algo con el arg que pasamos
             {
                 context.Result = new ContentResult()
                 {
@@ -31,7 +36,7 @@ namespace WebApi.Filters
                     Content = "You aren't logued correctly."
                 };
 
-                //Para obli, crear para cada perfil y decir si no sos del tipo X 403.
+                //Para obli, segun el perfil, decir si no sos del tipo X => 403.
             }
         }
     }

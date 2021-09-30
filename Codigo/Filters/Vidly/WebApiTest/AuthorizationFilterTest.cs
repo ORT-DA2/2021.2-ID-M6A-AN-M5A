@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -71,10 +70,7 @@ namespace WebapiTest
         public void TestAuthFilterWithValidHeader()
         {
             var logicMock = new Mock<IUserLogic>(MockBehavior.Strict);
-            AuthorizationFilter authFilter = new AuthorizationFilter(logicMock.Object);
-
             string token = "qwert123yu5i4o6p87";
-
             logicMock.Setup(x => x.IsLogued(token)).Returns(true);
 
             var modelState = new ModelStateDictionary();
@@ -87,6 +83,8 @@ namespace WebapiTest
                                   modelState: modelState),
                 new List<IFilterMetadata>());
 
+
+            AuthorizationFilter authFilter = new AuthorizationFilter(logicMock.Object);
             authFilter.OnAuthorization(context);
 
             ContentResult response = context.Result as ContentResult;

@@ -23,7 +23,8 @@ namespace WebApi
             this._restaurantLogic = restaurantLogic;
         }
 
-        [ServiceFilter(typeof(AuthorizationFilter))]
+
+        [AuthorizationWithParameterFilter("Admin")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -31,7 +32,8 @@ namespace WebApi
             return Ok(restaurants);
         }
 
-        [HttpGet("{restaurantId}", Name = "GetRestaurant")]
+        [ServiceFilter(typeof(AuthorizationFilter))]
+        [HttpGet("{restaurantId}")]
         public IActionResult GetById(int restaurantId)
         {
             Restaurant restaurant = this._restaurantLogic.GetById(restaurantId);
