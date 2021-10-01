@@ -194,7 +194,7 @@ En particular la forma de invocar y utilizar el contenido del Assembly.
 
 Diagrama UML del problema:
 
-![alt text](/Clases/Clase_9-Reflection/UMLPaquetesReflectionEjemplo1.png)
+![alt text](/Clases/Clase_9-Reflection/UMLReflection.png)
 
 ## Más información
 - [Documentación Reflection Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflection)
