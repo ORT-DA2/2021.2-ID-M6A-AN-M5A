@@ -51,6 +51,8 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - Clase 8 - Primera prueba tecnología + Clase de consulta
 
 ## Parte 2: FrontEnd - Angular y Reflection
+- Clase 9 - [Reflection](/Clases/Clase_9-Reflection/Reflection.md)
+
 
 ## Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
