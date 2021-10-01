@@ -171,7 +171,7 @@ A nivel de paquetes:
 
   
 
-![alt text]()
+![alt text](/Clases/Clase_9-Reflection/UMLPaquetesReflectionEjemplo1.png)
 
 
 ## Ejemplo 2 - Práctico
