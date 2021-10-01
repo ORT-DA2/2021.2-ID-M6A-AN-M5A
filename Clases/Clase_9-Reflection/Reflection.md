@@ -162,7 +162,7 @@ A nivel de clases:
 
 Diagrama posible de clases:
 
-![alt text](https://github.com/ORT-DA2/TECNOLOGIA-2020.1/blob/master/Resources/Clase6/UMLClasesReflectionEjemplo1.png)
+![alt text](/Clases/Clase_9-Reflection/UMLClasesReflectionEjemplo1.png)
 
   
   
@@ -171,7 +171,7 @@ A nivel de paquetes:
 
   
 
-![alt text](https://github.com/ORT-DA2/TECNOLOGIA-2020.1/blob/master/Resources/Clase6/UMLPaquetesReflectionEjemplo1.png)
+![alt text]()
 
 
 ## Ejemplo 2 - Práctico
@@ -194,7 +194,7 @@ En particular la forma de invocar y utilizar el contenido del Assembly.
 
 Diagrama UML del problema:
 
-![alt text](https://github.com/ORT-DA2/TECNOLOGIA-2020.1/blob/master/Resources/Clase6/UMLReflecion2.png)
+![alt text](/Clases/Clase_9-Reflection/UMLPaquetesReflectionEjemplo1.png)
 
 ## Más información
 - [Documentación Reflection Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/reflection)
