@@ -192,7 +192,8 @@ Se sugiere revisar los métodos:
 
 En particular la forma de invocar y utilizar el contenido del Assembly.
 
-Diagrama UML del problema
+Diagrama UML del problema:
+
 ![alt text](https://github.com/ORT-DA2/TECNOLOGIA-2020.1/blob/master/Resources/Clase6/UMLReflecion2.png)
 
 ## Más información
