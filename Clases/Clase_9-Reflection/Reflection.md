@@ -207,6 +207,3 @@ Los sistemas de archivos de Unix y Windows manejan diferente las rutas. Tener pr
 ### No encuentra la librería.
 Revisar que exactamente se está buscando iniciar desde donde se debe.
 Ejemplo, se dirección a un a carpeta y la dll está en otra.
-
-## Otras notas
-Este material tiene como fuente base un repositorio del [dictado anterior](https://github.com/ORT-DA2/N6A-NA-2019.2-Homeworks-Project/blob/master/Clases/Clase%209%20-%20Reflection.md)  de **Santiago Méndez**
