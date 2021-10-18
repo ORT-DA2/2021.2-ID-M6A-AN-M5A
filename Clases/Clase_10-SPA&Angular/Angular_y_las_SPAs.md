@@ -12,12 +12,12 @@ En el pasado, el flujo que exista en una aplicación web era algo así:
 
 1) Se tenía un **Web Server** que provee "al mundo" el contenido de nuestro sitio (html, js, css, etc).
 
-2) Luego, se utilizaba un **Browser** para ir a buscar dicho contenido, a partir de una solicitud HTTP.  Por ejemplo, cada vez que entramos a **http://www.starwars.es/**
+2) Luego, se utilizaba un **Browser** para ir a buscar dicho contenido, a partir de una solicitud HTTP.
 
 En el momento en el que obteníamos la página, nuestro **Browser/Explorador** tenía la lógica para mostrarla (renderizarla), y, en cada interacción/clic/evento subsiguiente que nosotros dispararamos sobre dicho html,
 el browser se encargaba de ir a pedir un nuevo .html al Web Server para mostrar el contenido asociado al mismo.
 
-![imagen](angular-clase1/request.png)
+![imagen](request.png)
 
 Este tipo de aplicaciones son conocidas como **Round-Trip Applications** (o **RTAs**).
 
@@ -36,7 +36,7 @@ Las *SPAs*, si bien siguen manteniendo la misma forma de interactuar **cliente-s
 
 **El documento HTML inicial nunca se recarga**, y el usuario puede seguir intercalando con el html existente mientras las requests ajax terminan de ejecutarse asincrónicamente.
 
-![imagen](angular-clase1/spa_rta_3.png)
+![imagen](spa_rta_3.png)
 
 Particularmente veremos un framework que está 100% orientado a la construcción de SPAs: **Angular**.
 
@@ -54,7 +54,7 @@ El mismo logra logra sus mejores resultados cuando la aplicación a desarrollar 
 
 ## ¿Qué es Angular?
 
-![imagen](angular-clase1/angular%20logo.png)
+![imagen](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png)
 
 ### Lectura Previa: ¿Por qué Angular?
 
@@ -94,19 +94,19 @@ La versión del framework que usaremos es comunmente llamada como "Angular 2", o
 
 También podemos realizar una comparativa a más detallada:
 
-![imagen](angular-clase1/angular1_vs_angular2.jpg)
+![imagen](angular1_vs_angular2.jpg)
 
 De aquí en adelante, siempre que hablemos de *Angular*, nos estaremos refiriendo a *Angular 2*.
 
 ## Arquitectura de una aplicación Angular
 
-![imagen](angular-clase1/angular_architecture.png)
+![imagen](angular_architecture.png)
 
 En **Angular**, una aplicación **se define a partir de un conjunto de componentes**, del mismo modo que también de servicios subyacentes que son comunes a ellos  y permiten el reuso de la lógica. Por ejemplo: servicios para contectarse con APIs REST, servicios que manejen la sesión desde el lado del cliente, servicios de autenticación, etc.
 
 ### Pero… ¿Qué es un componente en Angular?
 
-![imagen](angular-clase1/angular_components.png)
+![imagen](angular_components.png)
 
 Un componente es una una unidad modularizada que define la vista y la lógica para controlar una porción de una pantalla en Angular. Cada componente se compone de:
 
@@ -118,7 +118,7 @@ Un componente es una una unidad modularizada que define la vista y la lógica pa
 
 ### ¿Y cómo hacemos que todos estos componentes se integren en una app en Angular? - Modules
 
-![imagen](Imagenes/angular-clase1/angular_modules_features.png)
+![imagen](angular_modules_features.png)
 
 Esto lo logramos a partir de lo que se llaman, **Angular Modules**. Estos nos permiten organizar nuestros componentes en funcionalidad cohesiva. Cada app angular tiene por lo menos un Angular Module, llamado el **Root Angular Module**.
 
@@ -134,41 +134,16 @@ Son simplemente funciones que van a modificar nuestras clases de JavaScript. Ang
 
 ## Eligiendo un lenguaje para nuestras apps en Angular
 
-![imagen](Imagenes/angular-clase1/angular_ecmascript_es6.png)
+![imagen](angular_ecmascript_es6.png)
 
-### ECMAScript como una especificación de JS
-
-JavaScript como lenguaje de programación, posee una especificación que define todas las reglas que este debe cumplir. Todas las versiones que vayan saliendo siempre de JavaScript, deben respetar dicha especificación/estándar, cuyo nombre es **ECMAScript** o de la forma usual en que se lo abrevia **(ES)**.
-
-Las diferentes versiones que van saliendo, se van versionando con un número, y evidentemente cada una tiene diferente soporte en los browsers. Por ejemplo: ES3 es soportado por los browsers viejos, ES5 es actualmente la especificación que soportan todos los browsers nuevos.
-
-![imagen](Imagenes/angular-clase1/angular_ecmascript_releases.jpg)
-
-Cuando queremos construir una Angular App, tenemos varias opciones de lenguajes que se adecuan con la especificación de JavaScript, y la idea aquí es ver cuál de ellas pueda resultarnos más útil.
-
-### La necesidad de usar Transpilers
-
-![imagen](http://csharpcorner.mindcrackerinc.netdna-cdn.com/article/getting-started-with-typescript-2-0/Images/Getting%20Started%20With%20TypeScript%2021411.png)
-
-Una de las últimas y que tiene más soporte en Angular es **ES2015** (que antes se llamaba **ES6** y que fue aprobada hace 1 año apróximadamente). Esto tiene como consecuencia que la mayora de los browsers todavía no tienen soporte completo para la misma. Ver: http://kangax.github.io/compat-table/es6/
-
-Es por esto que si usamos un lenguaje basado en ES2015, **este debe ser debe ser transpilado (transpiled), a ES2015**. Eso significa que todo el código que hagamos en ES6/ES2015 debe ser compilado por una herramienta que lo que haga es convertir toda nuestra sintaxis en ES2015 a la sintaxis ES5 **antes de que el browser lo ejecute**.
-
-Aquí ganamos nosotros como desarrolladores, ya que podemos usar todas las features de ES2015, sin tener que abstenernos a lo que los navegadores soportan, obviamente siempre que usemos un transpilador.
 
 ### ¿Qué lenguaje usaremos? : TypeScript
 
 ![imagen](https://mobilemancerblog.blob.core.windows.net/blog/2016/08/TypeScript.png)
 
-Como Angular es una librería de JavaScript, podemos usar uno de los tantos lenguajes que compilan a JavaScript, para construir nuestras apps de Angular 2. Las versiones más comunes son:
+Como Angular es una librería de JavaScript, podemos usar uno de los tantos lenguajes que compilan a JavaScript, para construir nuestras apps de Angular 2.
 
-* ES5
-* ES2015 (también llamado ES6)
-* TypeScript
-
-![imagen](angular-clase1/es_especifications.png)
-
-Particularmente, eligiremos **TypeScript**. Este este es un superset de JavaScript y debe ser transpilado. Uno de los beneficios más importantes de TypeScript (o simplemente TS), es que es fuertemente tipado, significando que todo tiene un tipo de datos asociado (una variable, una función, un argumento, etc).
+Particularmente, eligiremos **TypeScript**. Este es un superset de JavaScript y debe ser transpilado. Uno de los beneficios más importantes de TypeScript (o simplemente TS), es que es fuertemente tipado, significando que todo tiene un tipo de datos asociado (una variable, una función, un argumento, etc).
 
 ### Características de TypeScript
 
@@ -234,7 +209,7 @@ También vemos que el TypeScript compiler y el FileServer que levantamos, “wat
 Ejemplo:
 
 * 1  Cambio el Componente de APP
-![imagen](angular-clase1/angular_project_update_1.png)
+![imagen](ngular_project_update_1.png)
 * 2  Guardo y veo como el watcher se activa
 ![imagen](angular-clase1/angular_project_update_2.png)
 * 3 Instantáneamente mis cambios en la vista se reflejan en el navegador
@@ -247,13 +222,13 @@ El proceso es similar a cómo describimos al principio:
 
 Se realiza una request del navegador al web Server:
 
-![imagen](angular-clase1/angular_request_1.png)
+![imagen](angular_request_1.png)
 
-![imagen](angular-clase1/angular_request_2.png)
+![imagen](angular_request_2.png)
 
 Y este le contesta:
 
-![imagen](angular-clase1/angular_request_3.png)
+![imagen](angular_request_3.png)
 
 #### ¿Qué contiene?
 
