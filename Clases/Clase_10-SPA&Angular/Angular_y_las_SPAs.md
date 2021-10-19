@@ -110,9 +110,9 @@ En **Angular**, una aplicación **se define a partir de un conjunto de component
 
 Un componente es una una unidad modularizada que define la vista y la lógica para controlar una porción de una pantalla en Angular. Cada componente se compone de:
 
-- Un **template (que es el HTML para la UI, tambin llamado la View)**. Sin los datos, por eso un template. Los datos serán inyectados de forma dinámico.
+- Un **template es lo que nos permite definir la vista de un Componente, en html. 
 
-- Una **clase que es el código asociado a la View**, teniendo properties/datos que están disponibles para el uso de las Views, y métodos que son lógica o acciones para dichas views. Por ejemplo: responder a un click de un botón, o a un evento.
+- Una **clase que es el código asociado a la View**, teniendo properties/datos y métodos que agregan lógica o acciones. Ambos están disponibles para ser usados por los templates. Por ejemplo: responder a un click de un botón, o a un evento.
 
 - **Metadata**, la cual provee información adicional del componente a Angular. Es lo que identifica a la clase  asociada al componente.
 
@@ -155,11 +155,8 @@ Particularmente, eligiremos **TypeScript**. Este es un superset de JavaScript y 
 
 4) Compila a JavaScript (viejo y conocido), a través de transpilación.
 
-5) ¿Cómo hace TS para determinar los tipos apropiados cuando usamos librerías de JavaScript que no son fuertemente tipadas? A partir de usar TypeScript definition files (*.d.ts)
+5) TypeScript implementa la especificación de ES2015, y permite construir CLASES, es orientado a  objetos lo que permite utilizar objetos, interfaces y herencia!
 
-6) TypeScript implementa la especificación de ES2015, y permite construir CLASES! Es orientado a objetos permitiendo usar e clases, interfaces y herencia!
-
-Este último punto para nosotros es muy interesante por el hecho de que **tenemos un background** (desde Programación 1), en **lenguajes orientados a objetos** (C++, Java, c#, etc). Usar TypeScript va a ser más natural para todos nosotros.
 
 ### Ejercicio: PlayGround de TypeScript
 
@@ -183,7 +180,14 @@ Lo bajaremos desde aquí: https://nodejs.org. Donde descargaremos la version rec
 
 3) Funciona también como **WebServer**, que "servirá" nuestras Angular SPAs, en un web server liviando que levanta. Esto es mucho más cercano a un escenario real y evita problemas que suelen existir cuando accedemos directamente a los archivos a partir de su path en disco (`file://miarchivo.html`)
 
-### 2) Construyendo nuestro ambiente de desarrollo
+### 2) Instalarndo con ANGULAR
+
+1. **Configurar el entorno de desarrollo** - Instalamos Angular CLI ```npm install -g @angular/cli``` (este comando instala el cli de angular de manera global y solo debemos ejecutarlo cuando no se encuentra el CLI en nuestra pc)
+2. **Creamos nuestro proyecto** -  ```ng new NombreDelProyecto``` (si no se coloca un nombre se crea en el proyecto actual)
+3. **Ejecutamos nuestro proyecto** - ```ng serve --open``` (--open habre una ventana en el navegador en ```http://localhost:4200/```)
+
+
+### Construyendo nuestro ambiente de desarrollo
 
 1. Crear una carpeta que contendrá nuestra aplicación.
 2. Agregar los archivos de configuración y definición de paquetes.
@@ -194,17 +198,26 @@ Lo bajaremos desde aquí: https://nodejs.org. Donde descargaremos la version rec
 
 Estos pasos los podemos hacer manuales cómo se dice en htttp://www.angular.io
 
-### Iniciando con ANGULAR
-
-1. **Configurar el entorno de desarrollo** - Instalamos Angular CLI ```npm install -g @angular/cli``` (este comando instala el cli de angular de manera global y solo debemos ejecutarlo cuando no se encuentra el CLI en nuestra pc)
-2. **Creamos nuestro proyecto** -  ```ng new NombreDelProyecto``` (si no se coloca un nombre se crea en el proyecto actual)
-3. **Ejecutamos nuestro proyecto** - ```ng serve --open``` (--open habre una ventana en el navegador en ```http://localhost:4200/```)
 
 ### 3) ¿Qué sucede al levantar nuestra app?
 
-Al arrancar nuestra app usamos el comando ```ng serve```. Esto lo que hace es levantar un Web Server para que nuestro navegador pueda consumir los archivos desde ahí, es simplemente un ambiente local que funciona como un ambiente real.
-A su vez, vemos comos se ejecuta **tsc, el TypeScript Compiler**, el cual compila nuestros .ts y los transpila a .js. Como vemos en el VisualStudioCode, vemos que por cada `.ts` que nosotros tenemos, se nos crean un `.js` y un `.js.map`, que fueron generados por el typescript compiler, que transpiró todos nuestros .ts para que el browser pueda entenderlos.
-También vemos que el TypeScript compiler y el FileServer que levantamos, “watchea” cualquier cambio a nivel de código, de manera que cada vez que hacemos un cambio en nuestro código, TypeScript lo recompila y podemos ver los cambios en el navegador.
+Para iniciar nuestra app usamos el comando ```ng serve```, "copilando" y levantando un Web Server local.
+En realidad no copila sino que transpila, si analizamos los archivos generados vemos comos se ejecuta **tsc, el TypeScript Compiler**, el cual compila nuestros .ts y los transpila a .js. Por cada `.ts`, se crea un `.js` y un `.js.map`, que fueron generados por el typescript compiler.
+
+Otros comandos interesantes (y necesarios) que tiene el cliente de angular son:
+
+| Comando        | Descripcion           | 
+| ------------- |:-------------:| 
+| `ng add`      | Para agregar una libreria externa | 
+| `ng build`     | Para compilar nuestro proyecto, listo para producción. Crea un archivo unico donde esta nuestro codigo. | 
+| `ng lint` | Sirve para correr el linter en el proyecto |  
+| `ng test` | Sirve para correr todos los tests |  
+
+Cuando hacemos `ng serve`, se ejecutan varios pasos, los cuales se resumen a los siguientes:
+
+* Primero, se ejecuta el compilador de Typescript, llamado **tsc**. Este agarra todos nuestros archivos .ts y los transforma en archivos .js. Tambien crea archivos .js.map que se utilizan en el browser. 
+* Se crea un servidor local en un puerto especifico. Este toma nuestra aplicacion, y la hace accesible en el puerto por defecto. Aqui es que se ejecuta nuestro archivo `main`.
+* Se corre el `watch`. Esta es una utilidad, que lo que hace es que cada vez que nosotros modificamos alguno de nuestro archivos, se hace una recompilación de nuestros archivos .ts y se levanta de nuevo el servidor. Esto nos evitar tener que ir a la consola, apagar el servidor, y levantarlo de vuelta. Podemos ir trabajando y viendo nuestros cambios en tiempo real.
 
 Ejemplo:
 
