@@ -222,9 +222,9 @@ Cuando hacemos `ng serve`, se ejecutan varios pasos, los cuales se resumen a los
 Ejemplo:
 
 * 1  Cambio el Componente de APP
-![imagen](ngular_project_update_1.png)
+![imagen](angular_project_update_1.png)
 * 2  Guardo y veo como el watcher se activa
-![imagen](angular-clase1/angular_project_update_2.png)
+![imagen](angular_project_update_2.png)
 * 3 Instantáneamente mis cambios en la vista se reflejan en el navegador
 
 ### 4) El punto de entrada de nuestra aplicación: index.html
