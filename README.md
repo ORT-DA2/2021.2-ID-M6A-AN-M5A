@@ -52,6 +52,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 
 ## Parte 2: FrontEnd - Angular y Reflection
 - Clase 9 - [Reflection](/Clases/Clase_9-Reflection/Reflection.md)
+- Clase 10 - [SPA - Introducción a Angular](/Clases/Clase_10-SPA&Angular/Angular_y_las_SPAs.md)
 
 
 ## Guías
