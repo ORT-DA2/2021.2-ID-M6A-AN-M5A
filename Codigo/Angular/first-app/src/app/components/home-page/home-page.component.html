@@ -13,5 +13,53 @@
 <button (click)="print()">Hacer algo</button>
 
 
+<p>{{helloWorld | uppercase}}</p>
+<p>{{helloWorld | lowercase}}</p>
+<p>{{helloWorld | titlecase}}</p>
 
 
+<ng-container *ngIf="condition then ok; else fail"></ng-container>
+<ng-template #ok>
+    <div> Se cumple condición</div>
+</ng-template>
+<ng-template #fail>
+    <div> No se cumplió condición</div>
+</ng-template>
+
+
+<div *ngIf="condition then ok; else fail"></div>
+<ng-template #ok>
+    <div> Se cumple condición</div>
+</ng-template>
+<ng-template #fail>
+    <div> No se cumplió condición</div>
+</ng-template>
+
+<div *ngIf="condition">
+    Se muestra segunda condición
+</div>
+
+<ng-container [ngSwitch]="value">
+    <div *ngSwitchCase="0">Valor 0</div>
+    <div *ngSwitchCase="1">Valor 1</div>
+    <div *ngSwitchCase="2">Valor 2</div>
+    <div *ngSwitchDefault>Default</div>
+</ng-container>
+
+<ul>
+    <li *ngFor="let color of colors; index as i; even as e">
+        {{color}} - {{i}} - {{e}}
+    </li>
+</ul>
+
+<br>
+<br>
+<br>
+
+<input [(ngModel)]="filterValue" />
+
+<ul>
+    <li *ngFor="let color of (colors | filter : filterValue)">
+        {{color}}
+    </li>
+</ul>
