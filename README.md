@@ -54,6 +54,7 @@ Es necesario para realizar el obligatorio que ingresen su usuario de github en e
 - Clase 9 - [Reflection](/Clases/Clase_9-Reflection/Reflection.md)
 - Clase 10 - [SPA - Introducción a Angular](/Clases/Clase_10-SPA&Angular/Angular_y_las_SPAs.md)
 
+- [Resumen de Angular](/Clases/Angular.md)
 
 ## Guías
 - [Comandos Base para crear y copilar un proyecto](/Clases/Clase_01-Intro/Guias/ComandosNetCore.md)
